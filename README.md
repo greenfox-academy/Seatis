@@ -1,1 +1,1 @@
-[I'm an inline-style link](https://www.google.com)
+[Click to see the rabbit syllabus](https://github.com/greenfox-academy/rabbit-syllabus)

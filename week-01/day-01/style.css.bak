@@ -1,0 +1,59 @@
+body {
+	background: url("topography.png");
+	font-family: Consolas;
+	margin: 0;
+}
+
+h1 h2 {
+	font-family: Ariel;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10% 0 0;
+	/*padding-right: 80px;*/
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: #ff0099;
+	text-decoration: underline;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+div	{
+	padding: 10%;
+}
+
+h1	{
+	font-size: 3em;
+	margin: 0;
+	font-family: Courier New;
+}
+
+h2 {
+	font-family: Courier New;
+}
+
+#h2_spec {
+	color: #ff0099;
+}
+
+.wiki {
+	font-size: 2.2em;
+	text-align: center;
+	margin: 0;
+}
+
+#dash {
+	text-align: center;
+	padding: 4%;
+}

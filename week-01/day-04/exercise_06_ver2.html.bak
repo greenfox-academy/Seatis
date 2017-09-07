@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>CSS practice</title>
+		<link rel="stylesheet" type="text/css" href="style_06_ver2.css">
+	</head>
+<body>
+  <div>
+		ppppp
+	</div>
+	<div>
+		ppppp
+	</div>
+	<div>
+		ppppp
+	</div>
+	<br />
+	<div>
+		ppppp
+	</div>
+	<div>
+		ppppp
+	</div>
+	<div>
+		ppppp
+	</div>
+</body>
+</html>

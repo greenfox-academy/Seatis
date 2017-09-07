@@ -1,0 +1,41 @@
+body {
+	padding: 50px;
+	font-family: Times New Roman;
+}
+div {
+	width: 380px;
+}
+h1 {
+	font-size: 28px;
+	color: #FF6653;
+}
+h2 {
+	font-size: 22px;
+	color: #892CE2
+}
+#blue {
+	color: blue;
+}
+#red {
+	color: red;
+}
+#black {
+	color: #000;
+}
+
+/*ol > :second-child {
+    background:yellow;
+}*/	
+
+/*li:nth-last-child(4) {
+    background: red;
+}*/
+
+ol > li {
+	color:#ff3399;
+	text-decoration: underline;
+}
+
+ol li:last-child {
+	color: black;
+}

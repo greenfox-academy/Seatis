@@ -9,13 +9,14 @@ div {
 	line-height: 136px;
 	text-align: center;	
 	background: #B90CEB;
-	-moz-border-radius: 68px;
+	-moz-border-radius: 50%;
 	-webkit-border-radius: 68px;
 	border-radius: 68px;
 	display: inline-block;
 	margin: 5px;
 	color: #fff;
 	font-size: 32px;
+	font-weight: bold;
 }
 
 div:nth-child(n+2) {

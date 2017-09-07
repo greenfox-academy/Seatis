@@ -1,0 +1,21 @@
+body {
+	padding: 50px;
+	font-family: Times New Roman;
+}
+h1 {
+	font-size: 28px;
+}
+h2 {
+	font-size: 22px;
+	color: #EAAB36
+}
+#blue {
+	color: blue;
+}
+#red {
+	color: red;
+}
+#black {
+	color: #000;
+}
+

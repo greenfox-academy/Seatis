@@ -1,0 +1,30 @@
+body {
+	padding: 50px;
+}
+
+div {
+  width: 350px;
+	color: #fff;
+	font-size: 36px;
+	font-family: Consolas;
+	text-align: center;
+}
+
+.outside {
+	border: 15px solid #4285F4;
+}
+
+#top {
+	margin-bottom: 5px;
+}
+
+div.height {
+	height: 130px;
+	line-height: 130px;
+}
+.incolor_1 {
+	background: #E67676;
+}
+.incolor_2 {
+	background: #A9E6E6;	
+}

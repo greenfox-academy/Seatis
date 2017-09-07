@@ -1,0 +1,21 @@
+body {
+	padding: 50px 0 0 200px;
+	font-family: Ariel;
+}
+h1 {
+	font-size: 28px;
+}
+div {
+	width: 300px;
+	border-left: 2px solid #000;
+	padding: 20px;
+	font-size: 18px;
+	border-top: 2px solid #000;
+	border-right: 2px solid #000;
+}
+div.top {
+	border-top: 0;
+}
+div:hover {
+    background: #EC6842;
+}

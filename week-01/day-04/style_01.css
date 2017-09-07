@@ -1,0 +1,15 @@
+body {
+	padding: 50px;
+}
+
+div {
+	background-color: #0E91A1;
+  width: 320px;	/*350px*/
+	height: 105px;	/*135px*/
+  border: 5px solid #7DCE94;
+	color: #075D69;
+	font-size: 36px;
+	padding: 15px;
+	margin-bottom: 15px;
+	font-family: Consolas;
+}

@@ -1,0 +1,20 @@
+body {
+	padding: 50px;
+	font-family: Ariel;
+}
+.big {
+	color: blue;
+}
+div.container {
+		width: 260px;
+}
+#b325, .b326 {
+	border: 1px solid green;
+}
+div {
+	font-weight: bold;
+}
+p.big {
+	background: yellow;
+	width: 260px;
+}

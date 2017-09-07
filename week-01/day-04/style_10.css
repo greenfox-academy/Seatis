@@ -1,0 +1,33 @@
+body {
+	padding: 50px 0 0 200px;
+	font-family: courier;
+}
+h1 {
+	font-size: 28px;
+}
+div {
+	width: 175px;
+	padding: 20px 45px 20px 45px;
+	font-size: 16px;
+	margin-bottom: 10px;
+	text-align: center;
+	color: #FFF;
+}
+#red {
+	background: #FF6347 url(images/duck.png);
+	background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: 0% 50%; 
+}
+#purple {
+	background: #643579 url(images/duck.png);
+	background-size: 140px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+#grey {
+	background: #808080 url(images/duck.png);
+	background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}

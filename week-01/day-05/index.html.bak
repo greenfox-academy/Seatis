@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>HTML form</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 <body>
   <div class="container">
@@ -16,16 +17,18 @@
 					<input type="text" name="name" class="input">
 				</article>
 				<div class="half inside">
-					<article>
+					<article class="space">
 						<span>Születési éved</span><br />
 						<input id="year" type="text" name="year" class="input" value="pl 1984">
 					</article>
 				</div>
-				<div class="half inside">
-					<article>
-						<span>Nemed</span><br /><br />
+				<div class="half inside bottom">
+					<article class="space">
+						<span>Nemed</span><br />
+						<div class="radio bottom">
 						<input type="radio" name="gender" value="female">nő&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="radio" name="gender" value="male">férfi
+						</div>
 					</article>
 				</div>
 				<article>
@@ -54,19 +57,19 @@
 				<div class="header">Kapcsolat</div>
 				<article>
 					<span>Telefonszám</span><span class="red-star">*</span>
-					<input type="text" name="number" class="input">
+					<input type="text" name="number" class="input" placeholder="+36 - -  - - -  - - - -">
 				</article>
 				<article>
-					<span>E-mail cam</span><span class="red-star">*</span>
-					<input type="email" name="email" class="input">
+					<span>E-mail cím</span><span class="red-star">*</span>
+					<input type="email" name="email" class="input" placeholder="nev@domain.hu">
 				</article>
 				<article>
 					<span>Facebook profilod</span>
-					<input type="text" name="facebook" class="input">
+					<input type="text" name="facebook" class="input" placeholder="http://facebook.com/">
 				</article>
 				<article>
 					<span>Twitter profilod</span>
-					<input type="text" name="twitter" class="input">
+					<input type="text" name="twitter" class="input" placeholder="http://twitter.com">
 				</article>
 				<article>
 					<span>Milyen házban laksz?</span><br />
@@ -79,17 +82,18 @@
 				</article>
 
 			</div>
-			<div class="full">
+			<div class="full rm-top-padding">
 			<article>
-				<span>Bemutatkozás</span><br />
-				<textarea style="width: 100%;" rows="9" name="comment">Írj magadról pár mondatot!</textarea>
+				<span class="space">Bemutatkozás</span><br />
+				<textarea class="area" name="comment" placeholder="Írj magadról pár mondatot!"></textarea>
 			</article>
 			</div>
-			<div class="full">
+			<div class="full rm-top-padding bottom">
 			<article class="space">
 				<span>CV feltöltése</span><br />
 				<input type="button" class="button" value="Feltöltés">
 			</article>
+			<br />
 			<article class="space">
 					<input type="checkbox" name="check" value="checkok">
 					<label>Elfogadom a <span style="textdecor">felhasználási feltételeket</span></label>

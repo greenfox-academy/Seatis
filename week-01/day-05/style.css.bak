@@ -1,5 +1,5 @@
 body {
-	padding: 50px
+	padding: 50px;
 	font-family: 'Roboto', sans-serif;
 	margin: auto;
 	width: 50%;
@@ -46,7 +46,7 @@ div {
 	height: 40px;
 	margin-top: 5px;
 	padding-left: 10px;
-	box-sizing: border-box;
+	
 }
 
 .red-star {

@@ -19,7 +19,7 @@
 				<div class="half inside">
 					<article class="space">
 						<span>Születési éved</span><br />
-						<input id="year" type="text" name="year" class="input" value="pl 1984">
+						<input id="year" type="text" name="year" class="input" placeholder="pl 1984">
 					</article>
 				</div>
 				<div class="half inside bottom">

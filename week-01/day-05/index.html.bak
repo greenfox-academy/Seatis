@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="hu">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML form</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+<body>
+  <div class="container">
+		<div class="full"><span id="profil">Profil</span></div>
+		<form>
+			<div class="half">
+				<div class="header">Személyes adatok</div>
+				<article>
+					<span>Név</span><span class="red-star">*</span>
+					<input type="text" name="name" class="input">
+				</article>
+				<div class="half inside">
+					<article>
+						<span>Születési éved</span><br />
+						<input id="year" type="text" name="year" class="input" value="pl 1984">
+					</article>
+				</div>
+				<div class="half inside">
+					<article>
+						<span>Nemed</span><br /><br />
+						<input type="radio" name="gender" value="female">nő&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="gender" value="male">férfi
+					</article>
+				</div>
+				<article>
+					<span>Milyen márkát szeretsz?</span><br />
+					<div class="half inside space">
+					<input type="checkbox" name="brand" value="Adidas">Adidas<br />
+					<input type="checkbox" name="brand" value="Apple">Apple<br />
+					<input type="checkbox" name="brand" value="Coca-Cola">Coca-Cola<br />
+					<input type="checkbox" name="brand" value="Mazda">Mazda<br />
+					<input type="checkbox" name="brand" value="Nike">Nike
+					</div>
+					<div class="half inside space">
+					<input type="checkbox" name="brand" value="Opel">Opel<br />
+					<input type="checkbox" name="brand" value="Ray-Ban">Ray-Ban<br />
+					<input type="checkbox" name="brand" value="Starbucks">Starbucks<br />
+					<input type="checkbox" name="brand" value="Tesla">Tesla<br />
+					<input type="checkbox" name="brand" value="Yahoo">Yahoo
+					</div>
+					<p>Többet is választhatsz!</p>
+				</article>
+			
+			</div>
+
+
+			<div class="half">
+				<div class="header">Kapcsolat</div>
+				<article>
+					<span>Telefonszám</span><span class="red-star">*</span>
+					<input type="text" name="number" class="input">
+				</article>
+				<article>
+					<span>E-mail cam</span><span class="red-star">*</span>
+					<input type="email" name="email" class="input">
+				</article>
+				<article>
+					<span>Facebook profilod</span>
+					<input type="text" name="facebook" class="input">
+				</article>
+				<article>
+					<span>Twitter profilod</span>
+					<input type="text" name="twitter" class="input">
+				</article>
+				<article>
+					<span>Milyen házban laksz?</span><br />
+					<select name="flat" class="input">
+					<option value="volvo" selected="selected">Válassz típust!</option>
+					<option value="big">Nagy</option>
+					<option value="middle">Közepes</option>
+					<option value="small">Kicsi</option>
+					</select>
+				</article>
+
+			</div>
+			<div class="full">
+			<article>
+				<span>Bemutatkozás</span><br />
+				<textarea style="width: 100%;" rows="9" name="comment">Írj magadról pár mondatot!</textarea>
+			</article>
+			</div>
+			<div class="full">
+			<article class="space">
+				<span>CV feltöltése</span><br />
+				<input type="button" class="button" value="Feltöltés">
+			</article>
+			<article class="space">
+					<input type="checkbox" name="check" value="checkok">
+					<label>Elfogadom a <span style="textdecor">felhasználási feltételeket</span></label>
+			</article>
+			</div>
+			<div class="half">
+			<input type="button" class="save" value="Mentés">
+			</div>
+			<div class="half right">
+			<input type="button" class="button delete" value="Űrlap feltöltése">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

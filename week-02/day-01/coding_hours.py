@@ -7,3 +7,5 @@
 # Print the percentage of the coding hours in the semester if the average
 # work hours weekly is 52
 
+print ("Coding time: " + str(6 * 5 * 17) + " sec")
+print ("Percentage of coding hours: " + str((510 / (17 * 52))*100) + " %")

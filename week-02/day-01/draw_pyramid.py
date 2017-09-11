@@ -8,3 +8,17 @@
 # *******
 #
 # The pyramid should have as many lines as the number was
+lines = int(input("Number of lines: "))
+stars = ""
+spaces = ""
+j = 1
+for i in range(0, lines):
+    for k in range(0, j):
+        stars += "*"
+        
+    for k in range(0, lines - i):
+        spaces += " "
+    print (spaces + stars + "\n")
+    stars = ""
+    spaces = ""
+    j += 2

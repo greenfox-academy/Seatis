@@ -14,8 +14,7 @@ spaces = ""
 j = 1
 for i in range(0, lines):
     for k in range(0, j):
-        stars += "*"
-        
+        stars += "*"     
     for k in range(0, lines - i):
         spaces += " "
     print (spaces + stars + "\n")

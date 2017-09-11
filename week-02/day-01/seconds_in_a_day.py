@@ -4,3 +4,4 @@ current_seconds = 42;
 
 # Write a program that prints the remaining seconds (as an integer) from a
 # day if the current time is represented bt the variables
+print ("Time remaining in seconds: " + str((24 - current_hours + 1) * 3600 + (60 - current_minutes + 1) * 60 + (60 - current_seconds)))

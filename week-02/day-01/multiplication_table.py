@@ -13,3 +13,8 @@
 # 8 * 15 = 120
 # 9 * 15 = 135
 # 10 * 15 = 150
+num = int(input("Please add a number: "))
+a = 0
+while a < 10:
+    print (str(a + 1) + " * " + str(num) + " = " + str((a + 1) * num))
+    a += 1

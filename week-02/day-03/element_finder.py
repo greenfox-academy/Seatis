@@ -10,3 +10,5 @@ if contains_it:
     print("Hoorray")
 else:
     print("Noooooo")
+
+#if 7 in numbers:

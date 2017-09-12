@@ -3,8 +3,8 @@
 
 url = "https//www.reddit.com/r/nevertellmethebots"
 
-url = url[:-4]
-url += "odds.html"
+url = url[:5] + ":" + url[5:-4] + "odds.html"
+
 print(url)
 
 #How to do it by list

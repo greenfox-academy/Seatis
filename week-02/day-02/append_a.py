@@ -4,7 +4,6 @@
 # - Print the result of `appendA(am)`
 am = "kuty"
 def appendA(string):
-    str_list = (list(string))
-    str_list.append("a") 
-    print(''.join(str_list))
+    string += "a"
+    print (string)
 appendA(am)

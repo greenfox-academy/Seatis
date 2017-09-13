@@ -23,20 +23,17 @@ queue = [
 
 def security_check(check_list):
     man_ok = []
-    watch_list = []
+    i = 0
     for lines in check_list:
-        if lines['guns'] == 0:
-            if lines['alcohol'] > 0:
-                lines['alcohol'] = 0
-            man_ok += [lines]
-        else:
-            watch_list += [lines['name']]
-    print ("They cannot enter the festival:")
-    print (watch_list,"\n")
-    print("They can enter the festival:")
-    for lines in man_ok:
-        print (lines['name'])
-    # return check_list
-    print("\n",man_ok)
+        if lines['guns'] > 0:
+            # man_ok += [lines['name']]
+            del (check_list[i])
+        i += 1
+    print("\n")
+    return check_list
    
-security_check(queue)
+def main ():
+    print("They can enter the festival:")
+    print(security_check(queue))
+
+main()

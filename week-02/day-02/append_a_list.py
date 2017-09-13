@@ -8,4 +8,4 @@ for name in nimals:
     nimals[j] = name
     print(name)
     j += 1
-print(nimals)
+print(nim   als)

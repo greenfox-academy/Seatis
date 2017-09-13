@@ -14,12 +14,12 @@
 
 ingredients = [
 	{ 'vodka': 1, 'needs_cooling': True },
-	{ 'coffee_liqueur': 0, 'needs_cooling': True },
-	{ 'fresh_cream': 1, 'needs_cooling': True },
-	{ 'captain_morgan_rum': 2, 'needs_cooling': True },
-	{ 'mint_leaves': 0, 'needs_cooling': False },
-	{ 'sugar': 100, 'needs_cooling': False },
-	{ 'lime juice': 10, 'needs_cooling': True },
+	{ 'coffee': 0, 'needs_cooling': True },
+	{ 'fresh': 1, 'needs_cooling': True },
+	{ 'capta': 2, 'needs_cooling': True },
+	{ 'mint': 0, 'needs_cooling': False },
+	{ 'sugars': 100, 'needs_cooling': False },
+	{ 'lime': 10, 'needs_cooling': True },
 	{ 'soda': 100, 'needs_cooling': True }
 ]
 
@@ -33,7 +33,7 @@ def printer (items):
         len_column_1 = len("Ingredient") + 1
     else:
         len_column_1 = len(max(first_keys, key=len)) + 1
-    #print(len_column_1)
+    print(len_column_1)
     len_column_2 = 15
     len_column_3 = 10
     border_line = "+"

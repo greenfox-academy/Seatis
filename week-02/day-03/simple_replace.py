@@ -6,3 +6,5 @@ example = "In a dishwasher far far away";
 
 print(example)
 print (example.replace("dishwasher", "galaxy"))
+# example2 = example[:5] + "galaxy" + example[-13:]
+# print(example2)

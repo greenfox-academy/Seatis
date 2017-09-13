@@ -1,7 +1,3 @@
-watchlist = []
-
-security_alcohol_loot = 0
-
 queue = [
 	{ 'name': 'Amanda', 'alcohol': 10, 'guns': 1 },
 	{ 'name': 'Tibi', 'alcohol': 0, 'guns': 0 },
@@ -24,19 +20,24 @@ queue = [
 def security_check(check_list):
     man_ok = []
     watch_list = []
+    security_alcohol_loot = 0
     for lines in check_list:
         if lines['guns'] == 0:
             if lines['alcohol'] > 0:
+                security_alcohol_loot += lines['alcohol']
                 lines['alcohol'] = 0
-            man_ok += [lines]
+            man_ok += [lines]   
         else:
             watch_list += [lines['name']]
+        security_alcohol_loot += lines['alcohol']
     print ("They cannot enter the festival:")
     print (watch_list,"\n")
     print("They can enter the festival:")
+   
     for lines in man_ok:
         print (lines['name'])
     # return check_list
+    print("Security_alcohol_loot: " + str(security_alcohol_loot))
     print("\n",man_ok)
    
 security_check(queue)

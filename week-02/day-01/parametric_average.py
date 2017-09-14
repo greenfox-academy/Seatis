@@ -8,4 +8,4 @@ numnum = int(input("Give me the amount of the numbers: "))
 sum = 0
 for i in range(0, numnum):
     sum += int(input("Number " + str(i+1) + " : "))
-print ("Sum: " + str(sum) + ", Average: " + str(sum / (i - 1)))
+print ("Sum: " + str(sum) + ", Average: " + str(sum / numnum))

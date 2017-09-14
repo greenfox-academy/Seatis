@@ -8,3 +8,10 @@ def palindrom_build(string_1):
     return string_1
 
 print(palindrom_build(mystring))
+
+## easier
+# mystring = input("Type a word pls: ")
+# def palindrom_build(string_1):
+#     string_1 += ''.join(reversed(string_1))
+#     print (string_1)
+# palindrom_build(mystring)

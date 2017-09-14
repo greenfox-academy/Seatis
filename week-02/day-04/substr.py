@@ -24,5 +24,4 @@ def substr(string_1,string_2):
         return -1
 print(substr(str_1,str_2))
 
-# print (string_1.find(string_2))     #cheat
-
+# print (str_1.find(str_2))     #cheat

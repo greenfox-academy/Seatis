@@ -5,6 +5,7 @@ def subint(num_row,num):
     num_row_str = []
     for i in range(len(num_row)):
         num_row_str.append(str(num_row[i]))     #make 2D string list from int lsit
+    print(num_row_str)
     index = []
     for i in range(len(num_row_str)):
         flag = True

@@ -1,24 +1,14 @@
-def armstrong(num):
-    # Changed num variable to string, 
-    # and calculated the length (number of digits)
-    order = len(str(num))
+def armstrong_checker(number):
+    armstrong_number = 0
+    for digit in number:
+        armstrong_number += int(digit) ** len(number)
+    return int(number) == armstrong_number
 
-    # initialize sum
-    sum = 0
-
-    # find the sum of the cube of each digit
-    temp = num
-    while temp > 0:
-        digit = temp % 10
-        sum += digit ** order
-        temp //= 10
-
-    # display the result
-    if num == sum:
-        print(num,"is an Armstrong number")
+def main():
+    my_number = input("Type a number please: ")
+    if armstrong_checker(my_number):
+        print("The", my_number, "is an Armstrong number.")
     else:
-        print(num,"is not an Armstrong number")
+        print("The", my_number, "is NOT an Armstrong number.")
 
-
-number = int(input("Enter a number: "))
-armstrong(number)
+main()

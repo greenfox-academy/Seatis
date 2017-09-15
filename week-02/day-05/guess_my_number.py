@@ -1,3 +1,5 @@
+import random
+
 def printer(num,random_num,lives):
     if num < random_num:
         num_new = int(input(("Too low. You have",lives,"lives left.")))
@@ -10,10 +12,13 @@ def printer(num,random_num,lives):
         return 0
 
 def main():
+    # random_number = random.randint(1,100)
     random_number = 50
     number = int(input("I've the number between 1-100. You have 5 lives."))
-    for lives_remain in range(6,0,-1):
+    for lives_remain in range(5,1,-1):
         number = printer(number,random_number,lives_remain-1)
         if number == 0:
             return
+    if number == random_number:
+        print("Congratulations. You won!")
 main()

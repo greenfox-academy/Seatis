@@ -1,13 +1,9 @@
-input_1 = input("Type the first world pls: ")
-input_2 = input("Type the second world pls: ")
-def anagram(string_1,string_2):
-    string_3 = []
-    for i in range(len(string_1)-1,-1,-1):
-        string_3.append(string_1[i])
-    string_4 = ''.join(string_3)
-    if string_4 == string_2:
-        return True
-    else:
-        return False
+my_string_1 = input("Type the first world pls: ")
+my_string_2 = input("Type the second world pls: ")
 
-print(anagram(input_1,input_2))
+def anagram(string_1, string_2):
+    if len(string_1) != len(string_2):
+        return False
+    else:
+        return sorted(string_1) == sorted(string_2)
+print(anagram(my_string_1, my_string_2))

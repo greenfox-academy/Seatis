@@ -11,7 +11,7 @@ def palindrome_core(string):
             for i in range(j,k):                                # make a substring until k index, k is at least 3 char long, because, we need at least 3 char words
                 puffer += (string[i])                           # put substring in puffer 
             if palindrome_finder(puffer):                       # check if puffer is a palindrome
-                palindrome_string.append(puffer)                # if it is a palindrome, put it in list
+                palindrome_string.append(puffer)                # if it is a palindrome, put it in a list
     return palindrome_string
 
 def main():

@@ -8,6 +8,7 @@ def line_counter(file_name):
         my_file = open(file_name, "r")
         i = 0
         for line in my_file:
+            print(line)
             i += 1
         return i
         # print (len(my_file.readlines()))

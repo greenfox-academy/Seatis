@@ -21,7 +21,6 @@ def five_most_frequent(file_name):
                     j += 1
                     two_digit = False
                 i -= 1
-        print("-----------------------------------------------------------------------------")
         # print(sorted(num_list))
         num_list = sorted(num_list)
         frequenty_list = []
@@ -32,22 +31,11 @@ def five_most_frequent(file_name):
                 frequenty_list.append(counter)
                 counter = 0
         dictonary = {}
-        print(frequenty_list)
-        print(sorted(frequenty_list))
-        for i in range(4):
+        # print(frequenty_list)
+        # print(sorted(frequenty_list))
+        for i in range(5):
             dictonary[str(frequenty_list.index(max(frequenty_list))+1)] = max(frequenty_list)
-            frequenty_list.remove(max(frequenty_list))
-
-        
-        # print(frequenty_list)
-        # # print(sorted(frequenty_list))
-        # print(len(frequenty_list))
-        # print(max(frequenty_list))
-        # frequenty_list.remove(max(frequenty_list))
-        # print(frequenty_list)
-        # print(len(frequenty_list))
-        # print(max(frequenty_list))
-        # # print(frequenty_list.index(max(frequenty_list)))
+            frequenty_list[frequenty_list.index(max(frequenty_list))] = 0
         print(dictonary)
         fr.close()
     except IOError:

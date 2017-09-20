@@ -12,13 +12,11 @@ def line_play(x, y, a, b, color):
     line = canvas.create_line(x, y, a, b, fill=color)
 
 i = 0
-while i < 300:
-    line_play(0, i, i, 300, 'green')
-    i += 20
-i = 0
-while i < 300:
-    line_play(300-i, 0, 300, 300-i, 'purple')
-    i += 20
-    
+while i < 150:
+    line_play(150, i, 150+i, 150, 'green')
+    line_play(150, i, 150-i, 150, 'green')
+    line_play(150-i, 150, 150, 300-i, 'green')
+    line_play(150+i, 150, 150, 300-i, 'green')
+    i += 10
 
 root.mainloop()

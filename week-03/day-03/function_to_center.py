@@ -14,7 +14,7 @@ def move_to_center(x, y):
     line = canvas.create_line(x, y, 150, 150, fill='red')
 
 i = 0
-while i < 300:
+while i <= 300:
     move_to_center(i, 0)
     move_to_center(300-i, 300)
     move_to_center(0, i)

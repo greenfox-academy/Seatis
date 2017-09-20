@@ -13,6 +13,6 @@ def checkerboard_drawer(a):
             lime_box = canvas.create_rectangle(2*i*a, 2*j*a, (2*i+1)*a, (2*j+1)*a, fill="black")
             lime_box = canvas.create_rectangle((2*i+1)*a, (2*j+1)*a, (i+1)*2*a, (j+1)*2*a, fill="black")
 
-checkerboard_drawer(50)
+checkerboard_drawer(30)
 
 root.mainloop()

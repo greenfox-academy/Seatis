@@ -29,7 +29,7 @@ class Aircraft(object):
         return self.type_of_aircraft
 
     def getStatus(self):
-        return 'Type {}, Ammo: {}, Base damage: {}, All damage: {}'.format(self.type_of_aircraft, self.ammo, self.base_damage, self.base_damage * self.ammo) 
+        return 'Type: {}, Ammo: {}, Base damage: {}, All damage: {}'.format(self.type_of_aircraft, self.ammo, self.base_damage, self.base_damage * self.ammo) 
 
 
 class Carrier(object):
@@ -59,7 +59,7 @@ class Carrier(object):
         for fighter in self.aircrafts:
             self.one_damage = fighter.fight()
             self.carrier.health_point -= self.one_damage
-            self.total_damage += self.one_damage
+            # self.total_damage += self.one_damage
     
     def getStatus(self):
         self.all_damage = 0

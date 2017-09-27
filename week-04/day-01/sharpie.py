@@ -1,6 +1,6 @@
 class Sharpie(object):
 
-    def __init__(self, color, width):
+    def __init__(self, color="no color", width=0):
         self.ink_amount = 100
         self.color = color
         self.width = float(width)

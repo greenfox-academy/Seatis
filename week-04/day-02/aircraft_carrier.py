@@ -10,7 +10,8 @@ class Aircraft(object):
             self.base_damage = 30
         else:
             self.max_ammo = 12
-            self.base_damage = 50
+
+0            self.base_damage = 50
     
     def fight(self):
         self.ammo_temp = self.ammo
@@ -63,7 +64,7 @@ class Carrier(object):
     
     def getStatus(self):
         self.all_damage = 0
-        if self.health_point == 0:
+        if self.health_point < 0:
             print("It's dead Jim :(")
         else:
             for fighter in self.aircrafts:

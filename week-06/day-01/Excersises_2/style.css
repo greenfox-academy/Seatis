@@ -1,0 +1,29 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.container {
+    display: flex;
+    background: #FFD62A;
+    max-width: 755px;
+    height: 280px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    width: 105px;
+    height: 105px;
+}
+
+.purple {
+    background: #B02AFF;
+}
+

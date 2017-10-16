@@ -1,0 +1,38 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.container {
+    display: flex;
+    background: #fff;
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.item {
+    height: 190px;
+    min-width: 190px;
+}
+
+.green {
+    background: #51D400;
+    order: 3;
+}
+
+.yellow {
+    background: #FFD62A;
+    flex-grow: 1;
+    order: 2;
+}
+
+.purple {
+    background: #B02AFF;
+    order: 0;
+}
+

@@ -26,8 +26,8 @@ body{
 
 .footer {
     display: flex;
-    background: #0000FE;
-    flex-basis: 100px;
+    background: #CCCCCC;
+    flex-basis: 60px;
     width: 100%;
 }
 

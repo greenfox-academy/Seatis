@@ -15,24 +15,21 @@ body{
     padding: 0px;
     border: 5px solid black;
     border-radius: 25px;
+    
 
 }
 
 .blocks {
     display: flex;
-    /*padding: 10px;*/
+    padding-top: 20px;
     justify-content: flex-start;
     max-width: 720px;
-    background: rgb(17, 218, 157);
-    height: 280px;
+    /*height: 280px;*/
     align-items: flex-start;
     margin: 0 auto;
-    /*flex-flow: column;*/
-    /*box-sizing: border-box*/
-    
-}
-
-.blocks div {
+    flex-flow: column;
+    flex-grow: 1;
+    /*box-sizing: border-box;*/
     
 }
 
@@ -46,27 +43,41 @@ body{
 .header {
     display: flex;
     background: #B02AFF;
-    height: 55px;
+    flex-basis: 60px;
     width: 100%;
     flex-flow: row;
     justify-content: flex-start;
-    padding: 10px;
+    padding: 13px;
     box-sizing: border-box;
+}
+
+.base {
+    display: flex;
+    
+    flex-basis: 400px;
+    width: 100%;
+    flex-flow: row;
+    justify-content: flex-start;
+    
+    /*box-sizing: border-box;*/
+}
+
+.main {
+    display: flex;
+    flex-basis: 450px;
+    height: 455px;
+    background: #FFD62A
+}
+
+.sidebar {
+    display: flex;
+    flex-basis: 270px;
+    height: 455px;
+    background: #51D400
 }
 
 .header div {
     background: #2AEAFF;
     width: 100px;
     margin-right: 7px;
-}
-
-.main {
-    display: flex;
-    width: 450px;
-    height: 455px;
-    background: #FFD62A
-}
-
-.main div {
-    
 }

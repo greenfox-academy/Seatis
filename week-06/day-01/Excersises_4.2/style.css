@@ -10,7 +10,7 @@ body{
 .wrapper{
     width: 100%;
     max-width: 790px;
-    height: 620px;
+    height: 660px;
     margin: 0 auto;
     padding: 0px;
     border: 5px solid black;
@@ -21,16 +21,11 @@ body{
 
 .blocks {
     display: flex;
-    padding-top: 20px;
-    justify-content: flex-start;
-    max-width: 720px;
-    /*height: 280px;*/
+    justify-content: center;
     align-items: flex-start;
     margin: 0 auto;
     flex-flow: column;
-    flex-grow: 1;
-    /*box-sizing: border-box;*/
-    
+    flex-grow: 1; 
 }
 
 #menu {
@@ -47,33 +42,44 @@ body{
     width: 100%;
     flex-flow: row;
     justify-content: flex-start;
-    padding: 13px;
+    /* padding: 13px; */
+    padding: 13px 13px 13px 30px;
     box-sizing: border-box;
 }
 
 .base {
     display: flex;
-    
-    flex-basis: 400px;
+    flex-basis: 455px;
     width: 100%;
     flex-flow: row;
-    justify-content: flex-start;
+    justify-content: center;
+    padding-top: 10px;
     
     /*box-sizing: border-box;*/
+}
+
+.footer {
+    display: flex;
+    background: #CCCCCC;
+    flex-basis: 60px;
+    width: 730px;
+    margin-left: 30px;
+    margin-top: 10px;
 }
 
 .main {
     display: flex;
     flex-basis: 450px;
-    height: 455px;
+    /* height: 455px; */
     background: #FFD62A
 }
 
 .sidebar {
     display: flex;
     flex-basis: 270px;
-    height: 455px;
-    background: #51D400
+    /* height: 455px; */
+    background: #51D400;
+    margin-right: 10px;
 }
 
 .header div {

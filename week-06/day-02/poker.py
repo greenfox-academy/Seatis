@@ -25,8 +25,10 @@ def high_number(current_hand):
 
 def check_hand(current_hand):
     values = []
+    colors = []
     for card in current_hand:
-        values.append(str(card["value"]))
+        values.append(card["value"])
+        colors.append(card["color"])
     pair = 0
     drill = False
     poker = False
@@ -48,19 +50,37 @@ def check_hand(current_hand):
     elif poker:
         print("You have four of a kind!")
     else:
-        
-        high_card = high_number(current_hand)
-        print("You have just a high number, it is: " + value[high_card["value"] - 2] + " of " + high_card["color"])
-    return values
+        sorted_values = sorted(values)
+        counter = 0
+        for i in range(len(sorted_values) - 1):
+            if sorted_values[i+1] - sorted_values[i] == 1:
+                counter += 1
+        if counter == 4:
+            if len(set(colors)) == 1:
+                if max(values) == 14:
+                    print("You have a royal flush!")
+                else:
+                    print("You have a straight flush")
+            else:
+                print("You have a straight!")
+        else:
+            if len(set(colors)) == 1:
+                print("You have a flush!")
+            else: 
+                high_card = high_number(current_hand)
+                print("You have just a high number, it is: " + value[high_card["value"] - 2] + " of " + high_card["color"])
+    return sorted(values)
 
 
 
 
 def main():
-    hand = get_hand(["H2", "C3", "S4", "SA", "D7"])
+    hand_1 = get_hand(["HA", "HJ", "H2", "HK", "HQ"])
+    hand_2 = get_hand(["S7", "S4", "H5", "D6", "C3"])
     # print(hand)
     # print(high_number(hand))
-    print(check_hand(hand))
+    print(check_hand(hand_1))
+    print(check_hand(hand_2))
 
 
 main()

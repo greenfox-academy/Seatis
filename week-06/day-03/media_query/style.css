@@ -1,0 +1,38 @@
+body{
+    background: #eee;
+}
+
+.container {
+    display: flex;
+    background: #fff;
+    width: 100%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.item {
+    height: 190px;
+}
+
+.green {
+    background: #51D400;
+    flex-grow: 1;
+}
+
+.yellow {
+    background: #FFD62A;
+    flex-grow: 2;
+}
+
+.purple {
+    background: #B02AFF;
+    flex-grow: 1;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-flow: column;
+    }
+}

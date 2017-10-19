@@ -1,0 +1,56 @@
+body{
+  background: #eee;
+}
+
+.wrapper{
+  display: flex;
+  max-width: 800px;
+  height: 540px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #333333;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.square {
+  display: flex;
+  flex: 0 0 150px;
+  height: 150px;
+  background: #fff;
+  color: #000;
+  border-radius: 3px;
+  text-align: center;
+  vertical-align: center;
+  box-sizing: border-box;
+  font-size: 22px;
+  transform: rotate(45deg);
+  
+}
+
+.haha {
+  padding-top: 60px;
+  flex-basis: 150px;
+  height: 150px;
+  border: 2px solid #EA5E45;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, .0);
+  color: rgba(0, 0, 0, 1);
+  transform: rotate(-45deg);
+  align-self: center;
+  box-sizing: border-box;
+  transition: transform .8s ease-in-out;
+}
+
+.text {
+  transition: transform .8s ease-in-out;
+}
+
+.haha:hover {
+  transform: rotate(0deg);
+}
+
+.haha:hover .text {
+  transform: rotate(-45deg);
+}

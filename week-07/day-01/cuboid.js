@@ -7,5 +7,7 @@
 // Volume: 1000
 
 let a = 10;
-console.log("The surface area: " + (6 * a * a) + " m2");
-console.log("The volume of the cube: " + Math.pow(a, 3) + " m3");
+let b = 10;
+let c = 10;
+console.log("The surface area: " + 2 * (a * b  + b * c + a * c) + " m2");
+console.log("The volume of the cube: " + a * b * c + " m3");

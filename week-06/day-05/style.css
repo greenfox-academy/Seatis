@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+body {
+  background: #FBFBFB;
+  padding-top: 100px;
+}
+img {
+  width: 100%;
+  float: left;
+}
+section.header {
+  display: grid;
+  position: fixed;
+  width: 100%;
+  grid-template-rows: minmax(100px, auto);
+  grid-template-columns: 100px 1fr 585px 1fr 180px;
+  grid-gap: 10px;
+  top: 0;
+  background: #FBFBFB;
+}
+
+section.header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+section.header div a {
+  display: flex;
+  font-size: 20px;
+  font-family: 'Patua One', cursive;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #1B1B1B;
+  transition: 1.5s;
+}
+
+
+section.header div a:hover {
+  background: #ccc;
+}
+
+section.header div a:hover .cart {
+  transform: rotate(360deg);
+  transition: 0.8s;
+}
+
+.cart {
+  width: 30%;
+}
+
+.cart-bg {
+  background: #F3F3F3;
+}
+
+section.features {
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(1, minmax(735px, auto));
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 0px;
+}
+
+section.features div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+section.features div.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: blue;
+  width: 100%;
+  height: 100%;
+}
+
+section.features div.news {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 7fr 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+}
+
+section.features div.news section {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 50fr 217fr 50fr 130fr 50fr;
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+  justify-content: center;
+  align-items: center;
+  background: #222222;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding: 65px;
+  box-sizing: border-box;
+}
+
+section.features div.news section article.title {
+  width: 100%;
+  height: 100%;
+  color: #616161;
+  font-family: 'Karla', sans-serif;
+  font-size: 20px;
+  letter-spacing: 7px;
+}
+
+section.features div.news section article.main-title {
+  width: 100%;
+  height: 100%;
+  font-family: 'Karla', sans-serif;
+  font-size: 60px;
+}
+
+section.features div.news section article.line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Patua One', cursive;
+  font-size: 20px;
+}
+
+section.features div.news section article.line hr {
+  height: 3px;
+  background: #fff;
+  width: 70%;
+}
+
+section.features div.news section article.text {
+  width: 100%;
+  height: 100%;
+  line-height: 160%;
+  text-align: justify;
+  font-family: 'Karla', sans-serif;
+}
+
+section.features div.news section article.read-more {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Karla', sans-serif;
+  font-size: 22px;
+}
+
+section.features div.news a {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  border-bottom: 1px solid rgb(175, 168, 168);
+  font-family: 'Karla', sans-serif;
+  font-size: 22px;
+  transition: 1.5s;
+}
+
+section.features div.news a:hover {
+  background: #ccc;
+}
+
+section.features div.news a.left-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: rgb(114, 96, 96);
+  border-right: 1px solid rgb(175, 168, 168);
+}
+
+section.features div.news a.right-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: rgb(114, 96, 96);
+}
+
+section.features div.main img {
+  height: 100%;
+}

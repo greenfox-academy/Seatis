@@ -8,7 +8,8 @@
 # *******
 #
 # The pyramid should have as many lines as the number was
-lines = int(input("Number of lines: "))
+# lines = int(input("Number of lines: "))
+lines = 5
 stars = ""
 spaces = ""
 j = 1

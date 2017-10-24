@@ -3,8 +3,10 @@
 // Also, the URL is missing a crutial component, find out what it is and insert it too!
 
 var url = "https//www.reddit.com/r/nevertellmethebots";
-var urlArray = url.split("");
-urlArray.splice(5, 0, ":");
-url = urlArray.join("");
+url = url.slice(0, 5) + ":" + url.slice(5);
+
+// var urlArray = url.split("");
+// urlArray.splice(5, 0, ":");
+// url = urlArray.join("");
 
 console.log(url);

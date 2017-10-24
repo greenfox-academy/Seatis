@@ -4,6 +4,10 @@
 var a = 123;
 var b = 526;
 
+// Swap like in python
+[a, b] = [b, a]
+console.log(a);
+
 // Swap with using temp
 var tmp
 tmp = a;
@@ -16,3 +20,5 @@ console.log(b);
 b = [a, a = b][0];
 console.log(a);
 console.log(b);
+
+[a, b] = [b, a]

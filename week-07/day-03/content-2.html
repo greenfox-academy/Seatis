@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+<body>
+  <p class="apple">apple</p>
+  <p class="balloon">banana</p>
+  <p class="cat">car</p>
+  <p class="dog">dolphin</p>
+
+  <script>
+    'use strict';
+    var allContent = document.querySelectorAll('p');
+    allContent.forEach(function(element) {
+      element.innerHTML = allContent[3].innerHTML;
+    });
+    allContent.forEach(function(element) {
+      console.log(element);
+    });
+    // var pApple = document.querySelector('.apple');
+    // var pBanana = document.querySelector('.balloon');
+    // var pCar = document.querySelector('.cat');
+    // var pDolphin = document.querySelector('.dog');
+    // pApple.innerHTML = pDolphin.innerHTML;
+  </script>
+
+  <!-- You can work in the html or in a separate js file. Like:
+  <script>
+    fill every paragraph with the last one's content.
+  </script>
+  OR
+  <script src="content-2.js"></script> -->
+</body>
+</html>

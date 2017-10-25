@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: CreateElement</title>
+</head>
+<body>
+  <h1>The candyshop has:</h1>
+  <ul class="candyshop">
+    <li>1 Mega juicy candy</li>
+  </ul>
+
+  <script>
+    var myList = document.querySelector('ul.candyshop');
+    var listItem = document.querySelector('li');
+    myList.removeChild(listItem);
+    for (let i = 1; i < 17; i++) {
+      var newItem = document.createElement('li');
+      newItem.textContent = "Empty box #" + i;
+      myList.appendChild(newItem);
+    }
+  </script>
+
+  <!-- You can work in the html or in a separate js file. Like:
+  <script>
+    Remove the Mega juicy candy from the list.
+    Add 16 list items saying 'Empty box' to the list and add an index to it, like:
+    Empty box #1
+    Empty box #2
+    Empty box #3
+    ...
+  </script>
+  OR
+  <script src="createelement-2.js"></script> -->
+</body>
+</html>

@@ -11,7 +11,8 @@
       height: 100vh;
     }
     .party {
-      background: url(https://media.giphy.com/media/4c4jQPdVv381G/giphy.gif);
+      /* background: url(https://media.giphy.com/media/4c4jQPdVv381G/giphy.gif); */
+      background: url(https://media.giphy.com/media/xUPGcpmd3HaSQql0Bi/giphy.gif);
     }
   </style>
 </head>
@@ -24,7 +25,11 @@
     var button = document.querySelector('button');
     function partyOn () {
       var myDiv = document.querySelector('div');
-      myDiv.classList.add('party');
+      if (myDiv.classList.contains('party')) {
+        myDiv.classList.remove('party');
+      } else {
+        myDiv.classList.add('party');
+      }
     }
     button.addEventListener('click', partyOn);
   </script>

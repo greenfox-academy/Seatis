@@ -15,10 +15,8 @@
   <script>
     var myList = ['apple', 'banana', 'cat', 'dog'];
     var listItems = document.querySelectorAll('li');
-    var i = 0;
-    listItems.forEach(function(element) {
+    listItems.forEach(function(element, i) {
       element.innerHTML = myList[i];
-      i++;
     });
     document.querySelector('ul').style.background = "limegreen";
   </script>

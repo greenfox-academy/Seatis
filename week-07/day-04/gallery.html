@@ -1,0 +1,136 @@
+<html lang="en">
+  <head>
+    <title>Fancy Table</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-item slider">
+        <div class="left-content item"><a href="#" class="left-arrow"></a></div>
+        <div class="image item">
+          <img class="main-img" src="http://kephost.com/images/2017/10/26/bmw-1.jpg" alt="">
+          <div class="text-area">
+            <!-- <h2 class="title">jsiojm oqkw oqmwok jkqwij oqkwpok</h2>
+            <p class="text">jsiojm oqkw oqmwok jkqwij oqkwpok</p> -->
+          </div>
+        </div>
+        <div class="right-content item"><a href="#" class="right-arrow"></a></div>
+      </div>
+      <div class="container-item thumb">
+        
+      </div>
+    </div>
+
+    <script>
+
+      const database = [
+        {
+          link: 'http://kephost.com/images/2017/10/26/bmw-1.jpg',
+          minilink: 'http://kephost.com/images/2017/10/26/bmw-1-mini.jpg',
+          content: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG) is a Germany-based company which currently produces automobiles and motorcycles, and produced aircraft engines until 1945',
+          title: 'BMW-1'
+        },
+        {
+          link: 'http://kephost.com/images/2017/10/26/bmw-2.jpg',
+          minilink: 'http://kephost.com/images/2017/10/26/bmw-2-mini.jpg',
+          content: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG) is a Germany-based company which currently produces automobiles and motorcycles, and produced aircraft engines until 1945',
+          title: 'BMW-2'
+        },
+        {
+          link: 'http://kephost.com/images/2017/10/26/bmw-3.jpg',
+          minilink: 'http://kephost.com/images/2017/10/26/bmw-3-mini.jpg',
+          content: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG) is a Germany-based company which currently produces automobiles and motorcycles, and produced aircraft engines until 1945',
+          title: 'BMW-3'
+        },
+        {
+          link: 'http://kephost.com/images/2017/10/26/bmw-4.jpg',
+          minilink: 'http://kephost.com/images/2017/10/26/bmw-4-mini.jpg',
+          content: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG) is a Germany-based company which currently produces automobiles and motorcycles, and produced aircraft engines until 1945',
+          title: 'BMW-4'
+        },
+        {
+          link: 'http://kephost.com/images/2017/10/26/bmw-5.jpg',
+          minilink: 'http://kephost.com/images/2017/10/26/bmw-5-mini.jpg',
+          content: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG) is a Germany-based company which currently produces automobiles and motorcycles, and produced aircraft engines until 1945',
+          title: 'BMW-5'
+        },
+        {
+          link: 'http://kephost.com/images/2017/10/26/bmw-6.jpg',
+          minilink: 'http://kephost.com/images/2017/10/26/bmw-6-mini.jpg',
+          content: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG) is a Germany-based company which currently produces automobiles and motorcycles, and produced aircraft engines until 1945',
+          title: 'BMW-6'
+        }
+      ]
+      var thumbContainer = document.querySelector('div.thumb');
+      database.forEach(function(element) {
+        var newLink = document.createElement('a');
+        var newImg = document.createElement('img');
+        newLink.setAttribute('href', '#');
+        newImg.setAttribute('src', element['minilink']);
+        newImg.classList.add('img-small');
+        newLink.appendChild(newImg);
+        thumbContainer.appendChild(newLink);
+      });
+
+      var textArea = document.querySelector('.text-area');
+      var h2Item = document.createElement('h2');
+      var pItem = document.createElement('p');
+      h2Item.textContent = database[0]['title'];
+      pItem.textContent = database[0]['content'];
+      textArea.appendChild(h2Item);
+      textArea.appendChild(pItem);
+
+      var smallImg = document.querySelectorAll('.img-small');
+      var mainImg = document.querySelector('img.main-img');
+      var arrow = document.querySelectorAll('a.left-arrow, a.right-arrow');
+
+
+      function onClick (index) {
+        mainImg.style.transition = "all 2s";
+        mainImg.setAttribute('src', database[index]['link']);
+        h2Item.textContent = database[index]['title'];
+      }
+
+      function getIndex () {
+        database.forEach(function(element, i) {
+          if (mainImg.getAttribute('src') === element['link']) {
+            console.log(i);
+            onClick(i-1);
+          }
+        });
+        
+      }
+
+      arrow[0].addEventListener('click', function(){
+        database.forEach(function(element, i) {
+          if (mainImg.getAttribute('src') === element['link']) {
+            console.log(i);
+            if (i > 0) {
+              onClick(i-1);
+            }
+          }
+        });
+      }, false);
+
+      arrow[1].addEventListener('click', function(){
+        for (let i = database.length-1; i >= 0; i--) {
+          if (mainImg.getAttribute('src') === database[i]['link']) {
+            console.log(i);
+            if (i < database.length-1) {
+              onClick(i+1);
+            }
+          }
+        }
+      }, false);
+
+      smallImg.forEach(function(element, i) {
+        element.addEventListener('click', function(){
+          onClick(i);
+        }, false);
+      });
+
+      
+    </script>
+
+  </body>
+</html>

@@ -91,16 +91,6 @@
         h2Item.textContent = database[index]['title'];
       }
 
-      function getIndex () {
-        database.forEach(function(element, i) {
-          if (mainImg.getAttribute('src') === element['link']) {
-            console.log(i);
-            onClick(i-1);
-          }
-        });
-        
-      }
-
       arrow[0].addEventListener('click', function(){
         database.forEach(function(element, i) {
           if (mainImg.getAttribute('src') === element['link']) {

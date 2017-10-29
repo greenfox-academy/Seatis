@@ -41,7 +41,9 @@ img {
 
 img.main-img {
   position: absolute;
+  transition: opacity 1s ease-in-out;
 }
+
 
 .text-area {
   z-index: 0;
@@ -77,6 +79,7 @@ p {
   box-shadow: 0 10px 6px -6px #777;
   margin-right: 10px;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .img-small:hover {
@@ -133,7 +136,7 @@ p {
 
 .left-arrow:hover {
   color: rgb(153, 147, 153); 
-  transform: rotate(360deg);
+  /* transform: rotate(360deg); */
   transition: 0.8s;
 }
 .left-arrow:hover::before {
@@ -155,7 +158,7 @@ p {
 
 .right-arrow:hover {
   color: rgb(153, 147, 153); 
-  transform: rotate(360deg);
+  /* transform: rotate(360deg); */
   transition: 0.8s;
 }
 .right-arrow:hover::before {

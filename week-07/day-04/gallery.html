@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <title>Fancy Table</title>
+    <title>Image Gallery</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -10,8 +10,7 @@
         <div class="image item">
           <img class="main-img" src="http://kephost.com/images/2017/10/26/bmw-1.jpg" alt="">
           <div class="text-area">
-            <!-- <h2 class="title">jsiojm oqkw oqmwok jkqwij oqkwpok</h2>
-            <p class="text">jsiojm oqkw oqmwok jkqwij oqkwpok</p> -->
+            
           </div>
         </div>
         <div class="right-content item"><a href="#" class="right-arrow"></a></div>
@@ -63,13 +62,10 @@
       ]
       var thumbContainer = document.querySelector('div.thumb');
       database.forEach(function(element) {
-        var newLink = document.createElement('a');
         var newImg = document.createElement('img');
-        newLink.setAttribute('href', '#');
         newImg.setAttribute('src', element['minilink']);
         newImg.classList.add('img-small');
-        newLink.appendChild(newImg);
-        thumbContainer.appendChild(newLink);
+        thumbContainer.appendChild(newImg);
       });
 
       var textArea = document.querySelector('.text-area');
@@ -86,7 +82,6 @@
 
 
       function onClick (index) {
-        mainImg.style.transition = "all 2s";
         mainImg.setAttribute('src', database[index]['link']);
         h2Item.textContent = database[index]['title'];
       }
@@ -94,7 +89,6 @@
       arrow[0].addEventListener('click', function(){
         database.forEach(function(element, i) {
           if (mainImg.getAttribute('src') === element['link']) {
-            console.log(i);
             if (i > 0) {
               onClick(i-1);
             }
@@ -105,7 +99,6 @@
       arrow[1].addEventListener('click', function(){
         for (let i = database.length-1; i >= 0; i--) {
           if (mainImg.getAttribute('src') === database[i]['link']) {
-            console.log(i);
             if (i < database.length-1) {
               onClick(i+1);
             }

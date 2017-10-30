@@ -31,6 +31,7 @@ class Farm {
       this.animals.push(new Animal());      
     }
     this.slots--;
+    console.log(this.slots);
   }
 
   slaughter() {
@@ -39,6 +40,7 @@ class Farm {
       hungerIndex.push(element.hunger);
     });
     this.animals.splice(hungerIndex.indexOf(Math.min(...hungerIndex)), 1);
+    this.slots++;
   }
 
   report() {
@@ -75,7 +77,11 @@ for (let i = 0; i < 10; i++) {
 }
 
 
-// console.log(SheepFarm.progress());
 var myDiv = document.querySelector('div');
 const button = document.querySelector('button');
-button.addEventListener('click', SheepFarm.progress);
+button.addEventListener('click', function() {
+  SheepFarm.progress();
+  SheepFarm.animals.forEach(function(element) {
+    console.log(element);
+  }, this);
+}, false);

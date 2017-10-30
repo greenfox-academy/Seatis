@@ -27,12 +27,7 @@ class ElevatorModel {
     return currentPosition;
   }
 
-  elevatorDirection() {
 
-  }
-  // peopleInElevator() {
-
-  // }
   addPeople() {
     if (this.peopleInElevator < this.maxPeople) {
       this.peopleInElevator++;      
@@ -64,15 +59,14 @@ class ElevatorView {
   }
 
   moveElevator(direction) {
-    console.log("le");
     var levels = document.querySelectorAll('div.level');
     var currentPosition = myModel.elevatorPosition();
     console.log(currentPosition);
-    if (direction === 0 && currentPosition < myModel.maxFloor-1) {
+    if (direction === 'down' && currentPosition < myModel.maxFloor-1) {
       levels[currentPosition].classList.remove('green');
       levels[currentPosition].textContent = "";
       this.drawPeopleInElevator(currentPosition+1);
-    } else if (direction === 1 && currentPosition > 0) {
+    } else if (direction === 'up' && currentPosition > 0) {
         levels[currentPosition].classList.remove('green');
         levels[currentPosition].textContent = "";
         this.drawPeopleInElevator(currentPosition-1);
@@ -104,11 +98,11 @@ var moveDownButton = document.querySelector('button.down');
 var moveUpButton = document.querySelector('button.up');
 
 moveDownButton.addEventListener('click', function() {
-  myView.moveElevator(0);
+  myView.moveElevator('down');
 });
 
 moveUpButton.addEventListener('click', function() {
-  myView.moveElevator(1);
+  myView.moveElevator('up');
 });
 
 

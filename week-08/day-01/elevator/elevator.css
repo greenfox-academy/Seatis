@@ -48,10 +48,19 @@ body {
 }
 
 .level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 40px;
   background: white;
   border: 1px solid black;
+  color: black;
+  font-size: 22px;
+}
+
+.green {
+  background: green;
 }
 
 button {

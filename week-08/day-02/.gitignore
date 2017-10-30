@@ -1,0 +1,6 @@
+__pycache__/
+.vscode/
+index.html
+assets/
+class_test.js
+callback-test.js

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <style>
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        margin: 50px auto;
+        width: 400px;
+        height: 400px;
+        background: tomato;
+      }
+      button {
+        width: 140px;
+        height: 50px;
+        font-size: 22px;
+      }
+      section div {
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+    </style>
+</head>
+<body>
+    <section>
+      <div><button>Click Me!!!</button></div> 
+      <div class="text"></div>
+    </section>
+    <script>    
+        var myText = document.querySelector('.text');
+        var myButton = document.querySelector('button');
+        function delayedLog () {
+          setTimeout(function() {
+            myText.textContent = "2 seconds ellapsed";
+          }, 2000);
+        }
+        myButton.addEventListener('click', delayedLog);
+    </script>
+</body>
+</html>

@@ -13,7 +13,7 @@ function factorialCalc(factorialNumber) {
   console.log(factorialNumber)
 }
 
-factorialTillLimitWithCallback(20, factorialCalc);
+factorialTillLimitWithCallback(5, factorialCalc);
 
 // Create a function and pass it as a parameter to the factorialTillLimitWithCallback
 // function, and print all the factorial numbers till 20

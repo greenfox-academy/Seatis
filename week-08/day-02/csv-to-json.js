@@ -36,8 +36,8 @@ var myArray = data.split("\n")
 var nameList = [];
 var myMap = myArray.map(function(item) {
   var oneRegistry = item.split(";");
-  if (!nameList.includes(item[0])) {
-    nameList.push(item[0]);
+  if (!nameList.includes(oneRegistry[0])) {
+    nameList.push(oneRegistry[0]);
     return {name: oneRegistry[0], id: oneRegistry[1], color_code: oneRegistry[2]}  
   }
 });

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>JSON and AJAX</title>
+    <title>Moon Landing</title>
     <style>
       body {
         margin: 0;
@@ -34,7 +34,7 @@
       var urlParameters = {
         'url': "https://api.nytimes.com/svc/search/v2/articlesearch.json",
         'api_key': "8ea4de81b37142a5aa3107b26bc31261",
-        'begin_date': "19690718",
+        'begin_date': "19690716",
         'end_date': "19690721"
       }
       var url = urlParameters.url;
@@ -57,7 +57,7 @@
       console.log(requestAPI.response.docs);
 
       requestAPI.response.docs.forEach(function(element) {
-          if (element.snippet.search('moon') != -1 || element.snippet.search('lunar') != -1 || element.snippet.search('apollo') != -1) {
+          if (element.snippet.search('moon') != -1 || element.snippet.search('lunar') != -1 || element.snippet.search('apollo') != -1 || element.snippet.search('armstrong') != -1) {
           var moonArticle = {};
           moonArticle.headline = element.headline.main;
           moonArticle.snippet = element.snippet;

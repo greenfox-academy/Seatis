@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JSON and AJAX</title>
+    <style>
+      body {
+        margin: 0;
+        background: rgb(189, 202, 230);
+      }
+      .container {
+        width: 100%;
+        height: 100%;
+        border: 2px dotted green;
+        margin: 20px auto;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .thumbnails img {
+        cursor: pointer;
+      }
+      li {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      
+    </div>
+    <script>
+      var urlParameters = {
+        'url': "https://api.nytimes.com/svc/search/v2/articlesearch.json",
+        'api_key': "8ea4de81b37142a5aa3107b26bc31261",
+        'begin_date': "19690718",
+        'end_date': "19690721"
+      }
+      var url = urlParameters.url;
+      url += '?' + 'api-key=' + urlParameters.api_key + '&begin_date=' + urlParameters.begin_date + '&end_date=' + urlParameters.end_date;
+      console.log(url);
+      var myRequest = new XMLHttpRequest();
+      myRequest.open("GET", url, false);
+      myRequest.send(null);
+
+      if (myRequest.readyState === XMLHttpRequest.DONE) {
+      console.log("Everything is good, the response was received.");
+      } else {
+        console.log("Not ready yet.");
+      }
+      console.log(myRequest.readyState);
+
+      var requestAPI = JSON.parse(myRequest.response);
+      var myContainer = document.querySelector('div.container');
+      var articles = [];
+      console.log(requestAPI.response.docs);
+
+      requestAPI.response.docs.forEach(function(element) {
+          if (element.snippet.search('moon') != -1 || element.snippet.search('lunar') != -1 || element.snippet.search('apollo') != -1) {
+          var moonArticle = {};
+          moonArticle.headline = element.headline.main;
+          moonArticle.snippet = element.snippet;
+          moonArticle.publicationDate = element.pub_date;
+          moonArticle.url = element.web_url;
+          articles.push(moonArticle);
+        }
+      }, this);
+      console.log(articles);
+
+      var myDiv = document.querySelector('div.container');
+      articles.forEach(function(element, i) {
+        var myHeading = document.createElement('h1');
+        myHeading.textContent = "Article " + i+1;
+        var myUl = document.createElement('ul');
+        var li1 = document.createElement('li');
+        var li2 = document.createElement('li');
+        var li3 = document.createElement('li');
+        var li4 = document.createElement('li');
+        li1.textContent = "Headline: " + element.headline;
+        li2.textContent = "Snippet: " + element.snippet;
+        li3.textContent = "Publication date: " + element.publicationDate;
+        var myLink = document.createElement('a');
+        myLink.textContent = element.url;
+        myLink.setAttribute('href', element.url);
+        li4.appendChild(myLink);
+        myUl.appendChild(li1);
+        myUl.appendChild(li2);
+        myUl.appendChild(li3);
+        myUl.appendChild(li4);
+        myDiv.appendChild(myHeading);
+        myDiv.appendChild(myUl);
+      }, this);
+
+    </script>
+  </body>
+</html>

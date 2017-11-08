@@ -1,10 +1,11 @@
 var express = require('express');
-var bodyParser = require('body-parser');
+
 var app = express();
 
-var jsonParser = bodyParser.json();
+
 
 app.use('/assets', express.static('./assets'));
+app.use(express.json());
 
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/index.html');
@@ -46,7 +47,7 @@ app.get('/appenda/:input', function (req, res) {
 
 
 
-app.post('/dountil/:what', jsonParser, function (req, res) {
+app.post('/dountil/:what', function (req, res) {
   console.log(req.body);
   let summa = 0;
   if (req.params.what === 'sum') {
@@ -62,7 +63,27 @@ app.post('/dountil/:what', jsonParser, function (req, res) {
       i--;
     }
     res.json({'result': number});
+  } 
+});
+
+app.post('/arrays/:what', function (req, res) {
+  console.log(req.body);
+  var result = 0;
+  if (req.params.what === 'sum') {
+    req.body.numbers.forEach(function(element) {
+      result += element;
+    }, this);
+  } else if (req.params.what === 'multiply') {
+    result = 1;
+    req.body.numbers.forEach(function(element) {
+      result *= element;
+    }, this);
+  } else if (req.params.what === 'double') {
+    var result = req.body.numbers.map(function(num) {
+      return num * 2;
+    });
   }
+  res.json({'result': result});
 });
 
 

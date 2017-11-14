@@ -1,6 +1,5 @@
 __pycache__/
 .vscode/
-assets/
 node_modules/
 mysql-test/
 class_test.js

@@ -151,11 +151,11 @@ section.main-container div.arrows div{
   font-size: 18px;
 }
 
-#up {
+.up {
   cursor: pointer;
 }
 
-#down {
+.down {
   cursor: pointer;
 }
 
@@ -249,4 +249,13 @@ p.response {
   margin-left: 40px;
   font-size: 22px;
   margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:visited, a:active {
+  color: blue;
 }

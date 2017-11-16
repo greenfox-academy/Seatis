@@ -5,6 +5,21 @@ allTracks.addEventListener('click', function () {
   ajax('GET', 'http://localhost:8080/playlist-tracks/', renderTracklist, null);
 });
 
+var btnPrev = document.getElementById('btnPrev');
+var btnNext = document.getElementById('btnNext');
+btnPrev.addEventListener('click', function () {
+  currentTrack();
+});
+
+function currentTrack () {
+  var music = document.querySelector('audio');
+  var result = ajax('GET', 'http://localhost:8080/playlist-tracks/', callbackMirror, null);
+  console.log(result);
+}
+
+function callbackMirror (result) {
+  return result;
+}
 
 function renderPlaylist (result) {
   console.log(result.playlists[0].id);

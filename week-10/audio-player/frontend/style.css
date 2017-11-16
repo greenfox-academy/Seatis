@@ -8,7 +8,7 @@ main {
   grid-template-rows: 470px 35px;
   grid-template-columns: 1fr;
   grid-gap: 0px;
-  width: 700px;
+  width: 800px;
   padding: 0;
   box-sizing: border-box;
   margin: 50px auto;
@@ -110,6 +110,7 @@ main section.big-area div.left-content div.header div.header-right {
 main section.big-area div.left-content div.playlist{
   /* background: gold; */
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 main section.big-area div.right-content{
@@ -120,6 +121,7 @@ main section.big-area div.right-content{
   grid-gap: 0px;
   padding: 0;
   box-sizing: border-box;
+  overflow: scroll;
 }
 
 main section.big-area div.right-content div.top {
@@ -156,6 +158,7 @@ main section.big-area div.right-content div.top div.favourite a{
 
 main section.big-area div.right-content div.tracklist {
   /* background: lightgreen; */
+  cursor: pointer;
 }
 
 audio {
@@ -243,14 +246,31 @@ audio {
   }
 
 main section.big-area div.right-content div.tracklist li div.index {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   /* background:  */
+  flex-basis: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 main section.big-area div.right-content div.tracklist li div.soundtrack {
-  flex-grow: 7;
+  /* flex-grow: 7; */
+  /* justify-content: flex-start; */
+  flex-basis: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 main section.big-area div.right-content div.tracklist li div.time {
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  flex-basis: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.highlight {
+  background: rgb(71, 224, 71);
 }

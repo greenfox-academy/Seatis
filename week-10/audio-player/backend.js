@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.use(express.static('./frontend'));
 app.use('/assets', express.static('./assets'));
+app.use('/mp3', express.static('./mp3'));
 app.use(cors());
 
 var connection = mysql.createConnection({

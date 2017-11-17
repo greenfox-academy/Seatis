@@ -8,18 +8,61 @@ allTracks.addEventListener('click', function () {
 var btnPrev = document.getElementById('btnPrev');
 var btnNext = document.getElementById('btnNext');
 btnPrev.addEventListener('click', function () {
-  currentTrack();
+  ajax('GET', 'http://localhost:8080/playlist-tracks/', prevTrack, null)
+});
+btnNext.addEventListener('click', function () {
+  ajax('GET', 'http://localhost:8080/playlist-tracks/', nextTrack, null)
 });
 
-function currentTrack () {
+function prevTrack (result) {
+  divIndexAll = document.querySelectorAll('div.index');
+  divSoundtrackAll = document.querySelectorAll('div.soundtrack');
+  divTimeAll = document.querySelectorAll('div.time');
   var music = document.querySelector('audio');
-  var result = ajax('GET', 'http://localhost:8080/playlist-tracks/', callbackMirror, null);
-  console.log(result);
+  src = music.getAttribute('src');
+  src = src.slice(4);
+
+
+  result.tracks.forEach(function(element, i) {
+    console.log(src);
+    if (element.path === src && i > 0 && result.tracks[i-1].playlist_id === element.playlist_id) {
+      changeAudio(result.tracks[i-1].path);
+      highlight(divIndexAll[i-1], divSoundtrackAll[i-1], divTimeAll[i-1], i-1);
+    }
+  }, this);
 }
 
-function callbackMirror (result) {
-  return result;
+function nextTrack (result) {
+  divIndexAll = document.querySelectorAll('div.index');
+  divSoundtrackAll = document.querySelectorAll('div.soundtrack');
+  divTimeAll = document.querySelectorAll('div.time');
+  var music = document.querySelector('audio');
+  src = music.getAttribute('src');
+  src = src.slice(4)
+  result.tracks.forEach(function(element, i) {
+    console.log(src);
+    if (element.path === src && result.tracks[i+1].playlist_id === element.playlist_id) {
+      // console.log(result.tracks[i+1].playlist_id);
+      changeAudio(result.tracks[i+1].path);
+      highlight(divIndexAll[i+1], divSoundtrackAll[i+1], divTimeAll[i+1], i+1);
+    }
+  }, this);
 }
+
+function currentTrack (result) {
+  var music = document.querySelector('audio');
+  src = music.getAttribute('src');
+  src = src.slice(4)
+  result.tracks.forEach(function(element) {
+    console.log(src);
+    if (element.path === src) {
+      console.log(element.id);
+      console.log(element.playlist_id);
+      return [element.id, element.playlist_id]
+    }
+  }, this);
+}
+
 
 function renderPlaylist (result) {
   console.log(result.playlists[0].id);

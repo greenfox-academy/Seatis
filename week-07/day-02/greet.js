@@ -7,10 +7,10 @@
 
 const al = "Greenfox";
 function greet(name) {
-  if (name == undefined) {
-    console.log("Noone to greet!");
+  if (name) {
+    console.log("Greatings, dear " + name + '!');
   } else {
-    console.log("Greatings, dear " + name);
+    console.log("Noone to greet!");
   }
 }
 

@@ -23,4 +23,5 @@
 22. [Anagram - python](https://github.com/greenfox-academy/Seatis/blob/master/week-02/day-05/anagram.py)
 23. [Very basic JS practice](https://github.com/greenfox-academy/Seatis/tree/master/week-07/day-01)
 24. [JS practice - refactored](https://github.com/Seatis/final-exam-staff/tree/master/basic-examples)
+25. [Web-API](https://github.com/greenfox-academy/Seatis/blob/master/week-08/day-03/Get_Position/index-position.html)
 999. [Click to see the rabbit syllabus](https://github.com/greenfox-academy/rabbit-syllabus)

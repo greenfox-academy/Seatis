@@ -1,4 +1,4 @@
-# Final exam code examples:
+# Final exam own code examples:
 1. [Foundation](https://github.com/Seatis/final-exam-staff/blob/master/final_exam_almanach.js)
 2. [Arrays](https://github.com/Seatis/final-exam-staff/blob/master/arrays.js)
 3. [Objects](https://github.com/Seatis/final-exam-staff/blob/master/objects.js)

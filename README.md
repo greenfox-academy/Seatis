@@ -19,4 +19,5 @@
 18. [Protect private routes](https://github.com/greenfox-academy/huli-marvin-frontend/blob/dev/marvin-frontend/src/app/app-routing.module.ts)
 19. [Login](https://github.com/greenfox-academy/huli-marvin-frontend/blob/dev/marvin-frontend/src/app/login-screen/login-screen.component.ts)
 20. [Auth-service](https://github.com/greenfox-academy/huli-marvin-frontend/blob/dev/marvin-frontend/src/app/services/authentication.service.ts)
+21. [Final exam full staff repo](https://github.com/Seatis/final-exam-staff)
 999. [Click to see the rabbit syllabus](https://github.com/greenfox-academy/rabbit-syllabus)

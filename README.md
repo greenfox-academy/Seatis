@@ -20,4 +20,7 @@
 19. [Login](https://github.com/greenfox-academy/huli-marvin-frontend/blob/dev/marvin-frontend/src/app/login-screen/login-screen.component.ts)
 20. [Auth-service](https://github.com/greenfox-academy/huli-marvin-frontend/blob/dev/marvin-frontend/src/app/services/authentication.service.ts)
 21. [Final exam full staff repo](https://github.com/Seatis/final-exam-staff)
+22. [Anagram - python](https://github.com/greenfox-academy/Seatis/blob/master/week-02/day-05/anagram.py)
+23. [Very basic JS practice](https://github.com/greenfox-academy/Seatis/tree/master/week-07/day-01)
+24. [JS practice - refactored](https://github.com/Seatis/final-exam-staff/tree/master/basic-examples)
 999. [Click to see the rabbit syllabus](https://github.com/greenfox-academy/rabbit-syllabus)

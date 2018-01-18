@@ -3,7 +3,7 @@ body {
   background: rgb(75, 219, 87);
 }
 
-.container {
+div.container {
   width: 100%;
   height: 100%;
   padding: 5px;
@@ -11,10 +11,15 @@ body {
   overflow: hidden;
 }
 
-li {
+div.container li {
   font-size: 18px;
 }
 
-.title {
+div.container li a {
+  text-decoration: none;
+  color: navy;
+}
+
+div.title {
   text-align: center;
 }

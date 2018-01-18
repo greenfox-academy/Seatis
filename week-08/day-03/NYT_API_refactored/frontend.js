@@ -28,8 +28,7 @@ function filterMoonLanding(result) {
   let articles = result.response.docs.filter(item =>
     item.snippet.toLowerCase().includes('moon') ||
     item.snippet.toLowerCase().includes('lunar') ||
-    item.snippet.toLowerCase().includes('apollo') ||
-    item.snippet.toLowerCase().includes('armstrong'));
+    item.snippet.toLowerCase().includes('apollo'));
   console.log(articles);
   
   let divContainer = document.querySelector('div.container');

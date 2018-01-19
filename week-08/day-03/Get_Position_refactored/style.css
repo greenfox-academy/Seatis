@@ -17,7 +17,7 @@ div.container {
 
 div.container section.yourcity {
   /* background: yellow; */
- 
+  line-height: 200%;
 }
 
 div.container section.coordinates {

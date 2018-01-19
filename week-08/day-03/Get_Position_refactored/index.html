@@ -9,9 +9,20 @@
 </head>
 <body>
   <div class="container">
-    <section class="yourcity"></section>
+    <section class="yourcity">
+      <label for="">Your city: </label>
+      <input type="text" id="city"><br />
+      <button>Get the coordinates</button>
+    </section>
     <section class="coordinates"></section>
-    <section class="map"></section>
+    <section class="map">
+      <iframe
+        width="600"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCr5KoGCCUQ6-XzyRpmActyVjzYvXbB_Z4&q=Space+Needle,Seattle+WA&center=-33.8569,151.2152" allowfullscreen>
+      </iframe>
+    </section>
   </div>
   <script src="frontend.js"></script>
 </body>

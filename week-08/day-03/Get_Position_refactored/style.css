@@ -1,8 +1,8 @@
 body {
-  margin: 20px;
   background: rgb(189, 202, 230);
 }
 div.container {
+  margin: 20px auto;
   width: 600px;
   height: 600px;
   border: 2px dotted green;
@@ -11,22 +11,14 @@ div.container {
   grid-template-columns: 50% 50%;
   grid-auto-rows: 25% 75%;
   overflow: hidden;
-  /* line-height: 200%; */
-  /* background: blue; */
 }
 
 div.container section.yourcity {
-  /* background: yellow; */
   line-height: 200%;
 }
 
-div.container section.coordinates {
-  /* background: tomato; */
-  
-}
 
 div.container section.map {
-  /* background: purple; */
   grid-column: span 2;
 }
 

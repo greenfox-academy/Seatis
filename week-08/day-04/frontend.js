@@ -1,0 +1,1 @@
+let ajax = require('./ajax.js');

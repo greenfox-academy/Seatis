@@ -1,19 +1,5 @@
 "use strict"
 
-function ajax (method, url, data, callback, index) {
-  var xhr = new XMLHttpRequest();
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === 4) {
-      var responseData = JSON.parse(xhr.response);
-      callback(responseData, index);
-    }
-  });
-  xhr.open(method, url, true);
-  xhr.setRequestHeader("Accept", "application/json");
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.send(data);
-}
-
 function pageRender(result) {
   var baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
   let mainSection = document.querySelector('section.main-container');
@@ -67,8 +53,7 @@ function updateScore(result, index) {
 }
 
 function core() {
-  var baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
-  ajax('GET', baseURL, null, pageRender);
+  ajax('GET', 'http://secure-reddit.herokuapp.com/simple/posts', null, pageRender);
 }
 
 core();

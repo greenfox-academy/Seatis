@@ -1,11 +1,11 @@
 "use strict"
 
-function ajax (method, url, data, callback) {
+function ajax (method, url, data, callback, index) {
   var xhr = new XMLHttpRequest();
   xhr.addEventListener("readystatechange", function () {
     if (this.readyState === 4) {
       var responseData = JSON.parse(xhr.response);
-      callback(responseData);
+      callback(responseData, index);
     }
   });
   xhr.open(method, url, true);
@@ -14,9 +14,8 @@ function ajax (method, url, data, callback) {
   xhr.send(data);
 }
 
-ajax('GET', 'http://secure-reddit.herokuapp.com/simple/posts', null, pageRender);
-
 function pageRender(result) {
+  var baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
   let mainSection = document.querySelector('section.main-container');
   result.posts.forEach(function(element) {
     if (element.user !== null) {
@@ -25,10 +24,10 @@ function pageRender(result) {
       var currentUser = "Anonymus"
     }
     const markup = `
-    <div class="index">${element.id}</div>
+    <div class="id">${element.id}</div>
     <div class="arrows">
       <div><img class="up" src="assets/upvote.png" alt=""></div>
-      <div class="vote">${element.score}</div>
+      <div class="score">${element.score}</div>
       <div><img class="down" src="assets/downvote.png" alt=""></div>
     </div>
     <div class="title">
@@ -38,4 +37,38 @@ function pageRender(result) {
     </div>`
     mainSection.innerHTML += markup;
   });
+  voteController(baseURL);
 }
+
+function voteController(url) {
+  var currentID = document.querySelectorAll('.id');
+  var voteUp = document.querySelectorAll('.up');
+  console.log(voteUp);
+  var voteDown = document.querySelectorAll('.down');
+  voteUp.forEach(function(element, i) {
+    element.addEventListener('click', function() {
+      console.log(url);
+      let currentURL = url + '/' + currentID[i].textContent + '/upvote'
+      ajax('PUT', currentURL, null, updateScore, i);
+    });
+  
+  });
+  voteDown.forEach(function(element, i) {
+    element.addEventListener('click', function() {
+      let currentURL = url + '/' + currentID[i].textContent + '/downvote'
+      ajax('PUT', currentURL, null, updateScore, i);
+    });
+  });
+}
+
+function updateScore(result, index) {
+  var score = document.querySelectorAll('.score');
+  score[index].textContent = result.score;
+}
+
+function core() {
+  var baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
+  ajax('GET', baseURL, null, pageRender);
+}
+
+core();

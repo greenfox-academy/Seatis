@@ -1,7 +1,9 @@
 function ajax (method, url, data, callback) {
   var xhr = new XMLHttpRequest();
   xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === 4) {
+    if (this.readyState < 4) {
+      loading();
+    } else if (this.readyState === 4) {
       var responseData = JSON.parse(xhr.response);
       callback(responseData);
     }
@@ -26,6 +28,13 @@ function updateCoordinates(result) {
   } else {
     myCoordinates.innerHTML = 'Unknown city!'
   }
+}
+
+function loading () {
+  let myCoordinates = document.querySelector('section.coordinates');
+  let currentMap = document.querySelector('iframe');
+  myCoordinates.innerHTML = `<img src="progress.gif" alt="Waiting...">`;
+  currentMap.src = "progress.gif";
 }
 
 function core() {

@@ -19,7 +19,7 @@ div.container section.yourcity {
 
 div.container section.map {
   grid-column: span 2;
-}
+ }
 
 input {
   width: 150px;

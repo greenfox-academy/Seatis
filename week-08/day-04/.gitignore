@@ -1,6 +1,7 @@
 __pycache__/
 .vscode/
 assets/
+old/
 class_test.js
 callback-test.js
 closure-test.js

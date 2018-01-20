@@ -14,21 +14,26 @@ function ajax (method, url, data, callback) {
 
 function updateCoordinates(result) {
   let myCoordinates = document.querySelector('section.coordinates');
-  const markup = `<p>The city: ${result.Results[0].name}</p>
-                  <p>Latitude: ${result.Results[0].lat}</p>
-                  <p>Longitude: ${result.Results[0].lon}</p>`;
-  myCoordinates.innerHTML = markup;
-  console.log(result);
+  let currentMap = document.querySelector('iframe');
+  if (result.Results.length > 0) {
+    const markup = `<p>The city: ${result.Results[0].name}</p>
+                    <p>Latitude: ${result.Results[0].lat}</p>
+                    <p>Longitude: ${result.Results[0].lon}</p>`;
+    myCoordinates.innerHTML = markup;
+    let baseMapURL = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCr5KoGCCUQ6-XzyRpmActyVjzYvXbB_Z4&";
+    let newMapURL = baseMapURL += `q=${result.Results[0].name.split(', ').join('+')}&center=${result.Results[0].lat},${result.Results[0].lon}`;
+    currentMap.src = newMapURL;
+  } else {
+    myCoordinates.innerHTML = 'Unknown city!'
+  }
 }
 
 function core() {
   let myButton = document.querySelector('button');
   let myInput = document.querySelector('input');
-  let currentMap = document.querySelector('iframe');
   myButton.addEventListener('click', function() {
     let url = "https://devru-latitude-longitude-find-v1.p.mashape.com/latlon.php?location="
     url += myInput.value.replace(" ", "+");
-    console.log(url);
     ajax('GET', url, null, updateCoordinates);
   });
 }

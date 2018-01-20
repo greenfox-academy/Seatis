@@ -17,7 +17,6 @@ div.container section.yourcity {
   line-height: 200%;
 }
 
-
 div.container section.map {
   grid-column: span 2;
 }
@@ -27,4 +26,17 @@ input {
 }
 label {
   font-size: 20px;
+}
+
+button {
+  background-color: rgb(22, 84, 197);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 20px;
+  cursor: pointer;
 }

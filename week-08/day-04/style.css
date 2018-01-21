@@ -7,21 +7,13 @@
 body {
   margin: 0;
   background: rgb(223, 220, 220);
-  /* padding-top: 200px; */
   font-family: 'Lato', sans-serif;
 }
 
 section.header {
-  /* display: grid; */
-  /* position: absolute; */
   width: 100%;
   height: 250px;
-  /* grid-template-rows: minmax(50px, auto);
-  grid-template-columns: 250px 1fr 210px;
-  grid-gap: 0px; */
-  /* top: 0; */
   background: url("assets/spacebanner-3.png") no-repeat;
-  /* background-size: cover; */
 }
 
 section.main-container {
@@ -29,8 +21,6 @@ section.main-container {
   width: 100%;
   grid-template-rows: minmax(60px, auto);
   grid-template-columns: 30px 40px 1fr;
-  /* grid-gap: 10px; */
-  /* background: white; */
 }
 
 main {
@@ -43,8 +33,6 @@ main {
 }
 
 main section.newpost {
-  /* background: tomato; */
-  /* margin-right: 20px; */
   display: grid;
   grid-template-rows: 50px 400px;
   grid-template-columns: 1fr;
@@ -92,11 +80,7 @@ main section.newpost div.about div.space-list p {
 }
 
 main section.newpost div {
-  /* background: lightblue; */
   width: 100%;
-  /* position: fixed;
-  overflow-y: auto;
-  height: 100px; */
 }
 
 main section.newpost div.newpost-local {

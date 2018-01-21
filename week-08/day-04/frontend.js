@@ -1,5 +1,5 @@
 "use strict"
-var baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
+const baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
 
 function pageRender(result) {
   let mainSection = document.querySelector('section.main-container');

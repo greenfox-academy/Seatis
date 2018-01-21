@@ -23,10 +23,10 @@ function pageRender(result) {
     </div>`
     mainSection.innerHTML += markup;
   });
-  voteController();
+  eventController();
 }
 
-function voteController() {
+function eventController() {
   var currentID = document.querySelectorAll('.id');
   var voteUp = document.querySelectorAll('.up');
   var voteDown = document.querySelectorAll('.down');

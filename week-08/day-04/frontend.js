@@ -1,5 +1,6 @@
 "use strict"
-const baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
+// const baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
+const baseURL = 'https://time-radish.glitch.me/posts';
 
 function authService() {
   this.getLocalStorage = function() {
@@ -18,8 +19,8 @@ var myService = new authService();
 function pageRender(result) {
   let mainSection = document.querySelector('section.main-container');
   result.posts.forEach(function(element) {
-    if (element.user !== null) {
-      var currentUser = element.user;
+    if (element.owner !== null) {
+      var currentUser = element.owner;
     } else {
       var currentUser = "Anonymus"
     }

@@ -11,7 +11,7 @@ function core() {
       "url": myURL.value
     });
     if (myURL.value) {
-      ajax('POST', 'http://secure-reddit.herokuapp.com/simple/posts', body, afterEvent);
+      ajax('POST', 'https://time-radish.glitch.me/posts', body, afterEvent);
     }
     else {
       alert('Please enter the url!');

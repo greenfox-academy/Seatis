@@ -1,6 +1,20 @@
 "use strict"
 const baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
 
+function authService() {
+  this.getLocalStorage = function() {
+    return localStorage.getItem('user');
+  }
+  this.setLocalStorage = function(user) {
+    localStorage.setItem('user', user);
+  }
+  this.clearLocalStorage = function() {
+    localStorage.removeItem('user');
+  }
+}
+
+var myService = new authService();
+
 function pageRender(result) {
   let mainSection = document.querySelector('section.main-container');
   result.posts.forEach(function(element) {
@@ -23,6 +37,7 @@ function pageRender(result) {
     </div>`
     mainSection.innerHTML += markup;
   });
+  updateLogin();
   eventController();
 }
 
@@ -56,6 +71,20 @@ function eventController() {
 function updateScore(result, index) {
   var score = document.querySelectorAll('.score');
   score[index].textContent = result.score;
+}
+
+function updateLogin() {
+  let loginSection = document.querySelector('.login');
+  let currentUser = myService.getLocalStorage();
+  console.log(currentUser);
+  if (currentUser) {
+    var markup = `LOGGED IN AS ${currentUser}`
+  }
+  loginSection.innerHTML = markup;
+}
+
+function authentication() {
+
 }
 
 function core() {

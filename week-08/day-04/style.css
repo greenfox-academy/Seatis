@@ -83,7 +83,14 @@ main section.newpost div {
   width: 100%;
 }
 
-main section.newpost div.newpost-local {
+main section.newpost div.login-component {
+  display: grid;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+}
+
+main section.newpost div.login, div.logout {
   background: #4AA3DF;
   display: flex;
   justify-content: center;
@@ -94,29 +101,22 @@ main section.newpost div.newpost-local {
   color: white;
 }
 
-main section.newpost div.login {
-  display: grid;
-  grid-template-rows: 50px 50px;
-  grid-template-columns: 1fr;
-  grid-gap: 0px;
-}
-
-main section.newpost div.login div input {
+main section.newpost div.login-component div input {
   font-size: 18px;
   height: 40px;
 }
 
-main section.newpost div.login div span {
+main section.newpost div.login-component div span {
   display: flex;
   justify-content: center;
   font-size: 18px;
 }
 
-main section.newpost div.newpost-local:hover {
+main section.newpost div.login:hover, div.logout:hover {
   opacity: 0.75;
 }
 
-main section.newpost div.newpost-local a {
+main section.newpost div.login a {
   color: white;
   text-decoration: none;
 }

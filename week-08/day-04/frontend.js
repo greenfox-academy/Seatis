@@ -38,6 +38,7 @@ function pageRender(result) {
     mainSection.innerHTML += markup;
   });
   updateLogin();
+  loginController();
   eventController();
 }
 
@@ -68,24 +69,40 @@ function eventController() {
   });
 }
 
+function loginController() {
+  var login = document.querySelector('.login-component .login');
+  var inputField = document.querySelector('.login-component input');
+  var logout = document.querySelector('.login-component .logout');
+  if (login) {
+    login.addEventListener('click', function() {
+      myService.setLocalStorage(inputField.value);
+      updateLogin();
+    });
+  } else if (logout) {
+    logout.addEventListener('click', function() {
+      myService.clearLocalStorage();
+      updateLogin();
+    });
+  }
+}
+
 function updateScore(result, index) {
   var score = document.querySelectorAll('.score');
   score[index].textContent = result.score;
 }
 
 function updateLogin() {
-  let loginSection = document.querySelector('.login');
+  let loginSection = document.querySelector('.login-component');
   let currentUser = myService.getLocalStorage();
   if (currentUser) {
-    var markup = `LOGGED IN AS ${currentUser}`;
+    var markup = `<div><span>LOGGED IN AS ${currentUser}</span></div>
+                  <div class="logout">LOGOUT</div>`;
   } else {
-    var markup = ``
+    var markup = `<div><input type="text" placeholder="Please enter your name"></div>
+                  <div class="login">LOGIN</div>`;
   }
-  // loginSection.innerHTML = markup;
-}
-
-function authentication() {
-
+  loginSection.innerHTML = markup;
+  loginController();
 }
 
 function core() {

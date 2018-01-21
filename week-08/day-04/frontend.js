@@ -18,6 +18,7 @@ var myService = new authService();
 
 function pageRender(result) {
   let mainSection = document.querySelector('section.main-container');
+  mainSection.innerHTML = '';
   result.posts.forEach(function(element) {
     if (element.owner !== null) {
       var currentUser = element.owner;
@@ -61,8 +62,7 @@ function eventController() {
   removeItem.forEach(function(element, i) {
     element.addEventListener('click', function() {
       let currentURL = baseURL + '/' + currentID[i].textContent;
-      console.log(currentURL);
-      ajax('DELETE', currentURL, null);
+      ajax('DELETE', currentURL, null, reLoad);
     });
   });
 }
@@ -110,4 +110,8 @@ function core(result) {
   eventController();
 }
 
-ajax('GET', baseURL, null, core);
+function reLoad() {
+  ajax('GET', baseURL, null, core);
+}
+
+reLoad();

@@ -17,6 +17,7 @@ var myService = new authService();
 
 function pageRender(result) {
   let mainSection = document.querySelector('section.main-container');
+  console.log(result);
   result.posts.forEach(function(element) {
     if (element.user !== null) {
       var currentUser = element.user;

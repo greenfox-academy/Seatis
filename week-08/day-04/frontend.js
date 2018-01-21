@@ -17,7 +17,6 @@ var myService = new authService();
 
 function pageRender(result) {
   let mainSection = document.querySelector('section.main-container');
-  console.log(result);
   result.posts.forEach(function(element) {
     if (element.user !== null) {
       var currentUser = element.user;
@@ -38,9 +37,6 @@ function pageRender(result) {
     </div>`
     mainSection.innerHTML += markup;
   });
-  updateLogin();
-  loginController();
-  eventController();
 }
 
 function eventController() {
@@ -106,8 +102,11 @@ function updateLogin() {
   loginController();
 }
 
-function core() {
-  ajax('GET', baseURL, null, pageRender);
+function core(result) {
+  pageRender(result);
+  updateLogin();
+  loginController();
+  eventController();
 }
 
-core();
+ajax('GET', baseURL, null, core);

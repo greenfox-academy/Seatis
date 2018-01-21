@@ -1,7 +1,7 @@
 "use strict"
+var baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
 
 function pageRender(result) {
-  var baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
   let mainSection = document.querySelector('section.main-container');
   result.posts.forEach(function(element) {
     if (element.user !== null) {
@@ -19,30 +19,36 @@ function pageRender(result) {
     <div class="title">
       <div class="head"><a href='${element.url}'>${element.title}</a></div>
       <div class="description">submitted ${element.timestamp} month ago by ${currentUser}</div>
-      <div class="remove">modify remove</div>
+      <div><span class="modify">modify</span><span class="remove">remove</span></div>
     </div>`
     mainSection.innerHTML += markup;
   });
-  voteController(baseURL);
+  voteController();
 }
 
-function voteController(url) {
+function voteController() {
   var currentID = document.querySelectorAll('.id');
   var voteUp = document.querySelectorAll('.up');
-  console.log(voteUp);
   var voteDown = document.querySelectorAll('.down');
+  var removeItem = document.querySelectorAll('.remove');
   voteUp.forEach(function(element, i) {
     element.addEventListener('click', function() {
-      console.log(url);
-      let currentURL = url + '/' + currentID[i].textContent + '/upvote'
+      let currentURL = baseURL + '/' + currentID[i].textContent + '/upvote';
       ajax('PUT', currentURL, null, updateScore, i);
     });
   
   });
   voteDown.forEach(function(element, i) {
     element.addEventListener('click', function() {
-      let currentURL = url + '/' + currentID[i].textContent + '/downvote'
+      let currentURL = baseURL + '/' + currentID[i].textContent + '/downvote';
       ajax('PUT', currentURL, null, updateScore, i);
+    });
+  });
+  removeItem.forEach(function(element, i) {
+    element.addEventListener('click', function() {
+      let currentURL = baseURL + '/' + currentID[i].textContent;
+      console.log(currentURL);
+      ajax('DELETE', currentURL, null);
     });
   });
 }
@@ -53,7 +59,7 @@ function updateScore(result, index) {
 }
 
 function core() {
-  ajax('GET', 'http://secure-reddit.herokuapp.com/simple/posts', null, pageRender);
+  ajax('GET', baseURL, null, pageRender);
 }
 
 core();

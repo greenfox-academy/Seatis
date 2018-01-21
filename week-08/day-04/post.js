@@ -1,3 +1,5 @@
+"use strict"
+
 var myURL = document.querySelector('input');
 var myTitle = document.querySelector('textarea');
 

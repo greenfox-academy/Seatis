@@ -185,9 +185,14 @@ section.main-container div.title div.description{
   color: grey;
 }
 
-section.main-container div.title div.remove{
+section.main-container div.title div .remove, .modify{
   font-size: 16px;
   color: rgb(88, 88, 88);
+  margin-right: 10px;
+}
+
+section.main-container div.title div .remove{
+  cursor: pointer;
 }
 
 .header div {

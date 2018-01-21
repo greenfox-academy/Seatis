@@ -76,11 +76,12 @@ function updateScore(result, index) {
 function updateLogin() {
   let loginSection = document.querySelector('.login');
   let currentUser = myService.getLocalStorage();
-  console.log(currentUser);
   if (currentUser) {
-    var markup = `LOGGED IN AS ${currentUser}`
+    var markup = `LOGGED IN AS ${currentUser}`;
+  } else {
+    var markup = ``
   }
-  loginSection.innerHTML = markup;
+  // loginSection.innerHTML = markup;
 }
 
 function authentication() {

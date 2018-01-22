@@ -2,12 +2,12 @@ var countLetters = {
   occurrences: function(string) {
     var array = string.split('');
     var result = {};
-    if (array instanceof Array) { // Check if input is array.
+    if (array instanceof Array) {
         array.forEach(function (v, i) {
-            if (!result[v]) { // Initial object property creation.
-                result[v] = 1; // Create an array for that property.
-            } else { // Same occurrences found.
-                result[v]++; // Fill the array.
+            if (!result[v]) { 
+                result[v] = 1; 
+            } else { 
+                result[v]++;
             }
         });
     }

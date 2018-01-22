@@ -16,10 +16,27 @@ function authService() {
 
 var myService = new authService();
 
+function elapsedTimeCalc(timestamp) {
+  let currentDate = new Date();
+  let postDate = new Date(timestamp);
+  let timeInSec = Math.floor((currentDate - postDate) / 1000);
+  let hours   = Math.floor(timeInSec / 3600);
+  let minutes = Math.floor((timeInSec - (hours * 3600)) / 60);
+  let seconds = timeInSec - (hours * 3600) - (minutes * 60);
+  if (hours > 0) {
+    return hours + ' hours';
+  } else if (minutes > 0) {
+    return minutes + ' minutes';
+  } else {
+    return seconds + ' seconds';
+  }
+}
+
 function pageRender(result) {
   let mainSection = document.querySelector('section.main-container');
   mainSection.innerHTML = '';
   result.posts.forEach(function(element) {
+    let elapsedTime = elapsedTimeCalc(element.timestamp);
     if (element.owner !== null) {
       var currentUser = element.owner;
     } else {
@@ -34,7 +51,7 @@ function pageRender(result) {
     </div>
     <div class="title">
       <div class="head"><a href='${element.url}'>${element.title}</a></div>
-      <div class="description">submitted ${element.timestamp} month ago by ${currentUser}</div>
+      <div class="description">submitted ${elapsedTime} ago by ${currentUser}</div>
       <div><span class="modify">modify</span><span class="remove">remove</span></div>
     </div>`
     mainSection.innerHTML += markup;

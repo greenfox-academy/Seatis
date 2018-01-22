@@ -27,14 +27,14 @@ test('empty array', function (t) {
 
 test('null test', function (t) {
   var actual = sum.sumElements(null);
-  var expected = "Null is not an array!";
+  var expected = "This is not an array!";
   t.equal(actual, expected);
   t.end();
 });
 
 test('string test', function (t) {
   var actual = sum.sumElements('string');
-  var expected = "This is a string!";
+  var expected = "This is not an array!";
   t.equal(actual, expected);
   t.end();
 });

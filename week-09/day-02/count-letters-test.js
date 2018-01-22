@@ -10,3 +10,24 @@ test('alabama test', function (t) {
   t.deepEqual(actual, expected);
   t.end();
 });
+
+test('one letter', function (t) {
+  var actual = counter.occurrences('a');
+  var expected = {'a': 1};
+  t.deepEqual(actual, expected);
+  t.end();
+});
+
+test('empty arg', function (t) {
+  var actual = counter.occurrences();
+  var expected = {};
+  t.deepEqual(actual, expected);
+  t.end();
+});
+
+test('empty string', function (t) {
+  var actual = counter.occurrences('');
+  var expected = {};
+  t.deepEqual(actual, expected);
+  t.end();
+});

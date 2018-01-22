@@ -1,15 +1,17 @@
 var countLetters = {
   occurrences: function(string) {
-    var array = string.split('');
     var result = {};
+    if (string) {
+      var array = string.split('');
+    }
     if (array instanceof Array) {
-        array.forEach(function (v, i) {
-            if (!result[v]) { 
-                result[v] = 1; 
-            } else { 
-                result[v]++;
-            }
-        });
+      array.forEach(function (v, i) {
+        if (!result[v]) { 
+          result[v] = 1; 
+        } else { 
+          result[v]++;
+        }
+      });
     }
     return result;
   }

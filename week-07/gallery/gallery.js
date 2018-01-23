@@ -17,8 +17,8 @@ function initGallery() {
 }
 
 function onClick (index, mainImg, h2Item) {
-  mainImg.setAttribute('src', database[index]['link']);
-  h2Item.textContent = database[index]['title'];
+  mainImg.setAttribute('src', database[index].link);
+  h2Item.textContent = database[index].title;
 }
 
 function eventHandler() {
@@ -30,7 +30,7 @@ function eventHandler() {
   var arrowRight = document.querySelector('div.right-arrow');
   arrowLeft.addEventListener('click', function(){
     database.forEach(function(element, i) {
-      if (mainImg.getAttribute('src') === element['link']) {
+      if (mainImg.src === element.link) {
         if (i > 0) {
           onClick(i-1, mainImg, h2Item);
         }
@@ -40,7 +40,7 @@ function eventHandler() {
   
   arrowRight.addEventListener('click', function(){
     for (let i = database.length-1; i >= 0; i--) {
-      if (mainImg.getAttribute('src') === database[i]['link']) {
+      if (mainImg.src === database[i].link) {
         if (i < database.length-1) {
           onClick(i+1, mainImg, h2Item);
         }

@@ -10,6 +10,7 @@ function ElevatorController(myView, myModel) {
     let removeButton = document.querySelector('button.remove');
     let moveDownButton = document.querySelector('button.down');
     let moveUpButton = document.querySelector('button.up');
+    let levels = document.querySelectorAll('div.level');
     
     addButton.addEventListener('click', () => {
       this.myModel.addPeople();
@@ -22,11 +23,11 @@ function ElevatorController(myView, myModel) {
     });
     
     moveDownButton.addEventListener('click', () => {
-      this.myView.moveElevator('down');
+      this.myView.moveElevator('down', levels);
     });
     
     moveUpButton.addEventListener('click', () => {
-      this.myView.moveElevator('up');
+      this.myView.moveElevator('up', levels);
     });   
   } 
 }
@@ -81,8 +82,7 @@ function ElevatorView(model) {
     levels[index].textContent = this.myModel.peopleInElevator;
   }
 
-  this.moveElevator = function(direction) {
-    let levels = document.querySelectorAll('div.level');
+  this.moveElevator = function(direction, levels) {
     let currentPosition = this.myModel.elevatorPosition();
     if (direction === 'down' && currentPosition < this.myModel.maxFloor-1) {
       levels[currentPosition].classList.remove('green');

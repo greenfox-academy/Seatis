@@ -54,7 +54,7 @@ test('isVovel: is vovel a', function (t) {
 });
 
 test('isVovel: is vovel b', function (t) {
-  t.ok(extend.isVovel('b'), true);
+  t.notOk(extend.isVovel('b'), true);
   t.end();
 });
 

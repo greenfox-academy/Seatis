@@ -16,9 +16,15 @@ function initGallery() {
   thumbRender();
 }
 
-function onClick (index, mainImg, h2Item) {
+function updateImage (index, mainImg, h2Item) {
   mainImg.setAttribute('src', database[index].link);
   h2Item.textContent = database[index].title;
+}
+
+function currentPosition(currentImage) {
+  let index;
+  database.filter((item, i) => { if (currentImage === item.link) index = i });
+  return index;
 }
 
 function eventHandler() {
@@ -28,30 +34,25 @@ function eventHandler() {
   var mainImg = document.querySelector('img.main-img');
   var arrowLeft = document.querySelector('div.left-arrow');
   var arrowRight = document.querySelector('div.right-arrow');
+
   arrowLeft.addEventListener('click', function(){
-    database.forEach(function(element, i) {
-      if (mainImg.src === element.link) {
-        if (i > 0) {
-          onClick(i-1, mainImg, h2Item);
-        }
-      }
-    });
-  }, false);
+    var currentIndex = currentPosition(mainImg.src);
+    if (currentIndex > 0) {
+      updateImage(currentIndex - 1, mainImg, h2Item);
+    }
+  });
   
   arrowRight.addEventListener('click', function(){
-    for (let i = database.length-1; i >= 0; i--) {
-      if (mainImg.src === database[i].link) {
-        if (i < database.length-1) {
-          onClick(i+1, mainImg, h2Item);
-        }
-      }
+    var currentIndex = currentPosition(mainImg.src);
+    if (currentIndex < database.length - 1) {
+      updateImage(currentIndex + 1, mainImg, h2Item);
     }
-  }, false);
+  });
 
   smallImg.forEach(function(element, i) {
     element.addEventListener('click', function(){
-      onClick(i, mainImg, h2Item);
-    }, false);
+      updateImage(i, mainImg, h2Item);
+    });
   });
 }
 

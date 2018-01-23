@@ -1,8 +1,8 @@
 class ElevatorController {
   
-  constructor() {
-    this.myModel = new ElevatorModel(10, 10);
-    this.myView = new ElevatorView(this.myModel);
+  constructor(myView, myModel) {
+    this.myView = myView;
+    this.myModel = myModel;
     this.myView.drawElevator();
     this.myView.drawPeopleInElevator(0);
   }
@@ -105,7 +105,9 @@ class ElevatorView {
 }
 
 function core() {
-  var myElevator = new ElevatorController();
+  var myModel = new ElevatorModel(10, 10);
+  var myView = new ElevatorView(myModel);
+  var myElevator = new ElevatorController(myView, myModel);
   myElevator.eventHandler();
 }
 

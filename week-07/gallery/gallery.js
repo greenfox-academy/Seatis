@@ -1,51 +1,60 @@
-var thumbContainer = document.querySelector('div.thumb');
-database.forEach(function(element) {
-  var newImg = document.createElement('img');
-  newImg.setAttribute('src', element['minilink']);
-  newImg.classList.add('img-small');
-  thumbContainer.appendChild(newImg);
-});
+function thumbRender() {
+  let thumbContainer = document.querySelector('div.thumb');
+  database.forEach(function(element) {
+    const markup = `<img class="img-small" src="${element.minilink}" alt="">`;
+    thumbContainer.innerHTML += markup;
+  });
+}
 
-var textArea = document.querySelector('.text-area');
-var h2Item = document.createElement('h2');
-var pItem = document.createElement('p');
-h2Item.textContent = database[0]['title'];
-pItem.textContent = database[0]['content'];
-textArea.appendChild(h2Item);
-textArea.appendChild(pItem);
+function initGallery() {
+  let image = document.querySelector('div.image');
+  image.innerHTML = `<img class="main-img" src="${database[0].link}" alt="">
+                     <div class="text-area">
+                       <h2>${database[0].title}</h2>
+                       <p>${database[0].content}</p>
+                     </div>`;
+  thumbRender();
+}
 
-var smallImg = document.querySelectorAll('.img-small');
-var mainImg = document.querySelector('img.main-img');
-var arrow = document.querySelectorAll('a.left-arrow, a.right-arrow');
-
-
-function onClick (index) {
+function onClick (index, mainImg, h2Item) {
   mainImg.setAttribute('src', database[index]['link']);
   h2Item.textContent = database[index]['title'];
 }
 
-arrow[0].addEventListener('click', function(){
-  database.forEach(function(element, i) {
-    if (mainImg.getAttribute('src') === element['link']) {
-      if (i > 0) {
-        onClick(i-1);
+function eventHandler() {
+  var h2Item = document.querySelector('h2');
+  var pItem = document.querySelector('p');
+  var smallImg = document.querySelectorAll('.img-small');
+  var mainImg = document.querySelector('img.main-img');
+  var arrowLeft = document.querySelector('div.left-arrow');
+  var arrowRight = document.querySelector('div.right-arrow');
+  arrowLeft.addEventListener('click', function(){
+    database.forEach(function(element, i) {
+      if (mainImg.getAttribute('src') === element['link']) {
+        if (i > 0) {
+          onClick(i-1, mainImg, h2Item);
+        }
       }
-    }
-  });
-}, false);
-
-arrow[1].addEventListener('click', function(){
-  for (let i = database.length-1; i >= 0; i--) {
-    if (mainImg.getAttribute('src') === database[i]['link']) {
-      if (i < database.length-1) {
-        onClick(i+1);
-      }
-    }
-  }
-}, false);
-
-smallImg.forEach(function(element, i) {
-  element.addEventListener('click', function(){
-    onClick(i);
+    });
   }, false);
-});
+  
+  arrowRight.addEventListener('click', function(){
+    for (let i = database.length-1; i >= 0; i--) {
+      if (mainImg.getAttribute('src') === database[i]['link']) {
+        if (i < database.length-1) {
+          onClick(i+1, mainImg, h2Item);
+        }
+      }
+    }
+  }, false);
+
+  smallImg.forEach(function(element, i) {
+    element.addEventListener('click', function(){
+      onClick(i, mainImg, h2Item);
+    }, false);
+  });
+}
+
+initGallery();
+eventHandler();
+

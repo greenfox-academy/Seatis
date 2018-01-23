@@ -138,6 +138,7 @@ p {
   color: rgb(153, 147, 153); 
   /* transform: rotate(360deg); */
   transition: 0.8s;
+  cursor: pointer;
 }
 .left-arrow:hover::before {
   border-color: rgb(153, 147, 153);
@@ -160,6 +161,7 @@ p {
   color: rgb(153, 147, 153); 
   /* transform: rotate(360deg); */
   transition: 0.8s;
+  cursor: pointer;
 }
 .right-arrow:hover::before {
   border-color: rgb(153, 147, 153); 

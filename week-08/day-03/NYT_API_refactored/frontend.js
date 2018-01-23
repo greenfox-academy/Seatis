@@ -29,7 +29,7 @@ function filterMoonLanding(result) {
     item.snippet.toLowerCase().includes('moon') ||
     item.snippet.toLowerCase().includes('lunar') ||
     item.snippet.toLowerCase().includes('apollo') ||
-    item.snippet.toLowerCase().includes('apollo'));
+    item.snippet.toLowerCase().includes('armstrong'));
   console.log(articles);
   
   let divContainer = document.querySelector('div.container');

@@ -21,8 +21,11 @@ let printStr = function(str) {
 }
 
 try {
-	addString('hello', 'bello', printStr);
+  addString('hello', 'bello', printStr);
+  addString(1, 'bello', printStr);
+  addString('hello', 2, printStr);
 } catch (err) {
 	console.log('catching error:');
 	console.log(err.message);
 }
+

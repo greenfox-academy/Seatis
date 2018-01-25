@@ -1,6 +1,11 @@
+body {
+  margin: 20px;
+}
+
 table {
   border-collapse: collapse;
-  width: 800px;
+  width: 850px;
+  margin-top: 20px;
 }
 
 table, td, th {    
@@ -19,8 +24,36 @@ input {
   font-size: 18px;
 }
 
+#category, #price-lo, #price-hi {
+  width: 65px;
+}
+
+#price-hi {
+  margin-left: 10px;
+}
+
+label {
+  font-size: 20px;
+}
+
 button {
-  padding: 10px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+  color: white;
 }
 
 p {

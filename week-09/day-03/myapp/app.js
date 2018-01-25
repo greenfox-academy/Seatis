@@ -34,11 +34,16 @@ app.get('/greeter', function(req, res) {
   if (req.query.name && req.query.title) {
       res.json({"welcome_message": "Oh, hi there " + req.query.name + ", my dear " + req.query.title + "!"})
   }
+  else if (!req.query.name) {
+    res.json({
+      "error": "Please provide a name!"
+    });
+  }
   else {
-      res.json({
-          "error": "Please provide a name!"
-      })
-  }   
+    res.json({
+      "error": "Please provide a title!"
+    });
+  }
 });
 
 app.get('/appenda/:input', function (req, res) {
@@ -48,16 +53,15 @@ app.get('/appenda/:input', function (req, res) {
 
 
 app.post('/dountil/:what', function (req, res) {
-  console.log(req.body);
+  let number = req.body.until;
   let summa = 0;
   if (req.params.what === 'sum') {
-    for (let i = 0; i <= req.body.until; i++) {
+    for (let i = 0; i <= number; i++) {
       summa += i;
     }
     res.json({'result': summa});
   } else if (req.params.what === 'factor') {
-    let number = req.body.until;
-    let i = req.body.until -1;
+    let i = number -1;
     while (i > 0) {
       number *= i;
       i--;

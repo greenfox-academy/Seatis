@@ -74,24 +74,28 @@ app.post('/dountil/:what', function (req, res) {
   }
 });
 
-app.post('/arrays/:what', function (req, res) {
-  console.log(req.body);
-  var result = 0;
-  if (req.params.what === 'sum') {
-    req.body.numbers.forEach(function(element) {
-      result += element;
-    }, this);
-  } else if (req.params.what === 'multiply') {
-    result = 1;
-    req.body.numbers.forEach(function(element) {
-      result *= element;
-    }, this);
-  } else if (req.params.what === 'double') {
-    var result = req.body.numbers.map(function(num) {
-      return num * 2;
-    });
+app.post('/arrays', function (req, res) {
+  if (!req.body.what) {
+    res.json({'error': 'Please provide what to do with the numbers!'});
+  } else if (!req.body.numbers) {
+    res.json({'error': 'Please provide the numbers!'});
+  } else {
+    let result;
+    if (req.body.what === 'sum') {
+      result = 0;
+      req.body.numbers.forEach(function(element) {
+        result += element;
+      });
+    } else if (req.body.what === 'multiply') {
+      result = 1;
+      req.body.numbers.forEach(function(element) {
+        result *= element;
+      });
+    } else if (req.body.what === 'double') {
+      result = req.body.numbers.map(num => num * 2);
+    }
+    res.json({'result': result});
   }
-  res.json({'result': result});
 });
 
 

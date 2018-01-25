@@ -39,10 +39,26 @@ function appendTable(result){
 
 function eventHandler(baseURL) {
   let button = document.querySelector('button');
-  let category = document.querySelector('input');
-  let url = baseURL + '?category=';
+  let category = document.getElementById('category');
+  let publisher = document.getElementById('publisher');
+  let priceLo = document.getElementById('price-lo');
+  let priceHi = document.getElementById('price-hi');
+  let url = baseURL + '?';
+  if (category.value.length) {
+    url += `category=${category.value}`;
+  }
+  if (publisher.value.length) {
+    url += `&publisher=${publisher.value}`;
+  }
+  if (priceLo.value.length) {
+    url += `&price-lo=${priceLo.value}`;
+  }
+  if (priceHi.value.length) {
+    url += `&price-hi=${priceHi.value}`;
+  }
+  url = url.replace('?&', '?');
+
   button.addEventListener('click', function () {
-    url += category.value;
     ajax('GET', url, null, appendTable)
   });
 }

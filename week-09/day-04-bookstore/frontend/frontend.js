@@ -37,14 +37,21 @@ function appendTable(result){
   });
 }
 
-function eventHandler() {
+function eventHandler(baseURL) {
   let button = document.querySelector('button');
   let category = document.querySelector('input');
-  let url = 'http://localhost:4000/books?category=';
+  let url = baseURL + '?category=';
   button.addEventListener('click', function () {
-    let url = 'http://localhost:4000/books?category=';
+    // let url = 'http://localhost:4000/books?category=';
     url += category.value;
     ajax('GET', url, null, appendTable)
   });
 }
 
+function core() {
+  let baseURL = 'http://localhost:4000/books';
+  ajax('GET', baseURL, null, appendTable);
+  eventHandler(baseURL);
+}
+
+core();

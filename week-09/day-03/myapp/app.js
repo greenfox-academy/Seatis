@@ -53,21 +53,25 @@ app.get('/appenda/:input', function (req, res) {
 
 
 app.post('/dountil/:what', function (req, res) {
-  let number = req.body.until;
-  let summa = 0;
-  if (req.params.what === 'sum') {
-    for (let i = 0; i <= number; i++) {
-      summa += i;
+  if (typeof req.body.until === 'number') {
+    let number = req.body.until;
+    let summa = 0;
+    if (req.params.what === 'sum') {
+      for (let i = 0; i <= number; i++) {
+        summa += i;
+      }
+      res.json({'result': summa});
+    } else if (req.params.what === 'factor') {
+      let i = number -1;
+      while (i > 0) {
+        number *= i;
+        i--;
+      }
+      res.json({'result': number});
     }
-    res.json({'result': summa});
-  } else if (req.params.what === 'factor') {
-    let i = number -1;
-    while (i > 0) {
-      number *= i;
-      i--;
-    }
-    res.json({'result': number});
-  } 
+  } else {
+    res.json({'error': 'Please provide a number!'});
+  }
 });
 
 app.post('/arrays/:what', function (req, res) {

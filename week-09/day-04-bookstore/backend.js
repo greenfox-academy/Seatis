@@ -20,3 +20,7 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/frontend/index.html');
+});

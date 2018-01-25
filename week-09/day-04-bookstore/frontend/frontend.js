@@ -43,22 +43,23 @@ function eventHandler(baseURL) {
   let publisher = document.getElementById('publisher');
   let priceLo = document.getElementById('price-lo');
   let priceHi = document.getElementById('price-hi');
-  let url = baseURL + '?';
-  if (category.value.length) {
-    url += `category=${category.value}`;
-  }
-  if (publisher.value.length) {
-    url += `&publisher=${publisher.value}`;
-  }
-  if (priceLo.value.length) {
-    url += `&price-lo=${priceLo.value}`;
-  }
-  if (priceHi.value.length) {
-    url += `&price-hi=${priceHi.value}`;
-  }
-  url = url.replace('?&', '?');
 
   button.addEventListener('click', function () {
+    let url = baseURL + '?';
+    if (category.value.length) {
+      url += `category=${category.value}`;
+    }
+    if (publisher.value.length) {
+      url += `&publisher=${publisher.value}`;
+    }
+    if (priceLo.value.length) {
+      url += `&price-lo=${priceLo.value}`;
+    }
+    if (priceHi.value.length) {
+      url += `&price-hi=${priceHi.value}`;
+    }
+    url = url.replace('?&', '?');
+    console.log(url);
     ajax('GET', url, null, appendTable)
   });
 }

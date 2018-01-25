@@ -46,3 +46,5 @@ app.get('/books', function(req, res) {
       res.send({'books': data});
   });
 });
+
+app.listen(4000, () => console.log('Running'));

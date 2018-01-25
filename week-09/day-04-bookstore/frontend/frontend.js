@@ -53,10 +53,10 @@ function eventHandler(baseURL) {
       url += `&publisher=${publisher.value}`;
     }
     if (priceLo.value.length) {
-      url += `&price-lo=${priceLo.value}`;
+      url += `&priceLo=${priceLo.value}`;
     }
     if (priceHi.value.length) {
-      url += `&price-hi=${priceHi.value}`;
+      url += `&priceHi=${priceHi.value}`;
     }
     url = url.replace('?&', '?');
     console.log(url);

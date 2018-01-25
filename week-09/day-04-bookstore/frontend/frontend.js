@@ -1,10 +1,10 @@
 "use strict"
 
 function ajax (method, url, data, callback) {
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.addEventListener("readystatechange", function () {
     if (this.readyState === 4) {
-      var requestAPI = JSON.parse(xhr.response);
+      let requestAPI = JSON.parse(xhr.response);
       callback(requestAPI);
     }
   });
@@ -15,7 +15,7 @@ function ajax (method, url, data, callback) {
 }
 
 function appendTable(result){
-  var table = document.querySelector('section table');
+  let table = document.querySelector('section table');
   table.innerHTML = `<tr>
                       <th>Book</th>
                       <th>Athor</th> 
@@ -34,5 +34,17 @@ function appendTable(result){
                     </tr>
     `
     table.innerHTML += markup;
-  }, this);
+  });
 }
+
+function eventHandler() {
+  let button = document.querySelector('button');
+  let category = document.querySelector('input');
+  let url = 'http://localhost:4000/books?category=';
+  button.addEventListener('click', function () {
+    let url = 'http://localhost:4000/books?category=';
+    url += category.value;
+    ajax('GET', url, null, appendTable)
+  });
+}
+

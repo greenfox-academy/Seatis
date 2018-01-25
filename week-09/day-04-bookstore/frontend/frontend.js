@@ -42,7 +42,6 @@ function eventHandler(baseURL) {
   let category = document.querySelector('input');
   let url = baseURL + '?category=';
   button.addEventListener('click', function () {
-    // let url = 'http://localhost:4000/books?category=';
     url += category.value;
     ajax('GET', url, null, appendTable)
   });

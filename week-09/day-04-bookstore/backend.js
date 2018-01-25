@@ -1,10 +1,10 @@
 'use strict'
 
-var express = require('express');
-var cors = require('cors');
-var mysql = require('mysql');
+let express = require('express');
+let cors = require('cors');
+let mysql = require('mysql');
 
-var app = express();
+let app = express();
 
 app.use(express.json());
 
@@ -12,7 +12,7 @@ app.use(express.static('./frontend'));
 app.use('/assets', express.static('./assets'));
 app.use(cors());
 
-var connection = mysql.createConnection({
+let connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'GR18pv',
@@ -26,15 +26,15 @@ app.get('/', function(req, res) {
 });
 
 app.get('/books', function(req, res) {
-  var data = [];
+  let data = [];
   if (req.query.category) {
-    var queryString = `SELECT book_name, aut_name, cate_descrip, pub_name, book_price
+    let queryString = `SELECT book_name, aut_name, cate_descrip, pub_name, book_price
     FROM book_mast INNER JOIN author ON book_mast.aut_id=author.aut_id 
     INNER JOIN category ON book_mast.cate_id=category.cate_id 
     INNER JOIN publisher ON book_mast.pub_id=publisher.pub_id 
     WHERE cate_descrip='${req.query.category}'`;
   } else {
-  var queryString = `SELECT book_name, aut_name, cate_descrip, pub_name, book_price
+    let queryString = `SELECT book_name, aut_name, cate_descrip, pub_name, book_price
                      FROM book_mast INNER JOIN author ON book_mast.aut_id=author.aut_id 
                      INNER JOIN category ON book_mast.cate_id=category.cate_id 
                      INNER JOIN publisher ON book_mast.pub_id=publisher.pub_id`;

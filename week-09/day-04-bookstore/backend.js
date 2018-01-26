@@ -9,7 +9,6 @@ let app = express();
 app.use(express.json());
 
 app.use(express.static('./frontend'));
-app.use('/assets', express.static('./assets'));
 app.use(cors());
 
 let connection = mysql.createConnection({
@@ -22,7 +21,7 @@ let connection = mysql.createConnection({
 connection.connect();
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/frontend/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 app.get('/books', function(req, res) {

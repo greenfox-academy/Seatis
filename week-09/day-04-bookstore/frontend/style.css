@@ -61,6 +61,11 @@ button:hover {
   cursor: not-allowed;
 }
 
+section div.message p {
+  font-size: 36px;
+  text-align: center;
+}
+
 p {
   font-size: 30px;
   font-weight: 600;

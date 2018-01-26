@@ -15,26 +15,31 @@ function ajax (method, url, data, callback) {
 }
 
 function appendTable(result){
+  let message = document.querySelector('section div.message');
   let table = document.querySelector('section table');
-  table.innerHTML = `<tr>
-                      <th>Book</th>
-                      <th>Athor</th> 
-                      <th>Category</th>
-                      <th>Publisher</th>
-                      <th>Price</th>
-                    </tr>
-  `
-  result.books.forEach(function(element) {
-    const markup = `<tr>
-                      <td>${element.title}</td>
-                      <td>${element.author}</td>
-                      <td>${element.category}</td>
-                      <td>${element.publisher}</td>
-                      <td>${element.price}</td>
-                    </tr>
-    `
-    table.innerHTML += markup;
-  });
+  if (!result.books.length) {
+    table.innerHTML = "";
+    message.innerHTML = `<p>NO Result!</p>`;
+  } else {
+    message.innerHTML = "";
+    table.innerHTML = `<tr>
+                         <th>Book</th>
+                         <th>Athor</th> 
+                         <th>Category</th>
+                         <th>Publisher</th>
+                         <th>Price</th>
+                       </tr>`
+    result.books.forEach(function(element) {
+      const markup = `<tr>
+                        <td>${element.title}</td>
+                        <td>${element.author}</td>
+                        <td>${element.category}</td>
+                        <td>${element.publisher}</td>
+                        <td>${element.price}</td>
+                      </tr>`
+      table.innerHTML += markup;
+    });
+  }
 }
 
 function instantSearch(baseURL, button, category, publisher, priceLo, priceHi) {

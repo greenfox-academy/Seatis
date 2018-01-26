@@ -66,7 +66,6 @@ function instantSearch(baseURL, button, category, publisher, priceLo, priceHi) {
 function buttonSearch(baseURL, button, category, publisher, priceLo, priceHi) {
   
   button.addEventListener('click', function () {
-    console.log('nan');
     let url = baseURL + '?';
     if (category.value.length) {
       url += `category=${category.value}`;

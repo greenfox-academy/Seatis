@@ -25,6 +25,17 @@ connection.connect(function(err) {
   console.log("Connection established.");
 });
 
+function resultMaker(result) {
+  return {'status': 'OK', 'post': {
+    "id": result[0].id,      
+    "title": result[0].title,
+    "url": result[0].url,
+    "timestamp": result[0].timestamp,
+    "score": result[0].score, 
+    "owner": result[0].owner
+  }};
+}
+
 app.get('/', function(request, response) {
   res.sendFile(__dirname + '/index.html');
 });
@@ -57,14 +68,7 @@ app.post('/posts', function (request, response) {
       response.status(500).send({'status': 'error', 'error': `Database ${error.toString()}`});
       return;
     }
-    response.send({'status': 'OK', 'post': {
-      "id": result[0].id,      
-      "title": result[0].title,
-      "url": result[0].url,
-      "timestamp": result[0].timestamp,
-      "score": result[0].score, 
-      "owner": result[0].owner
-    }});
+    response.send(resultMaker(result));
   });
 });
 
@@ -82,14 +86,7 @@ app.put('/posts/:postID/upvote', function (request, response) {
       response.status(500).send({'status': 'error', 'error': `Database ${error.toString()}`});
       return;
     }
-    response.send({'status': 'OK', 'post': {
-      "id": result[0].id,      
-      "title": result[0].title,
-      "url": result[0].url,
-      "timestamp": result[0].timestamp,
-      "score": result[0].score, 
-      "owner": result[0].owner
-    }});
+    response.send(resultMaker(result));
   });
 });
 
@@ -107,14 +104,7 @@ app.put('/posts/:postID/downvote', function (request, response) {
       response.status(500).send({'status': 'error', 'error': `Database ${error.toString()}`});
       return;
     }
-    response.send({'status': 'OK', 'post': {
-      "id": result[0].id,      
-      "title": result[0].title,
-      "url": result[0].url,
-      "timestamp": result[0].timestamp,
-      "score": result[0].score, 
-      "owner": result[0].owner
-    }});
+    response.send(resultMaker(result));
   });
 });
 
@@ -127,14 +117,7 @@ app.delete('/posts/:postID', function (request, response) {
       response.status(500).send({'status': 'error', 'error': `Database ${error.toString()}`});
       return;
     }
-    body = {'status': 'OK', 'post': {
-      "id": result[0].id,      
-      "title": result[0].title,
-      "url": result[0].url,
-      "timestamp": result[0].timestamp,
-      "score": result[0].score, 
-      "owner": result[0].owner
-    }}
+    body = resultMaker(result);
   });
   connection.query(queryString, function(error, result) {
     if (error) {

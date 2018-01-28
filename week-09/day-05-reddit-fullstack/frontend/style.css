@@ -35,9 +35,14 @@ main {
 
 main section.newpost {
   display: grid;
-  grid-template-rows: 20px 50px 50px 270px auto;
+  grid-template-rows: 20px 50px 20px 50px 50px 270px auto;
   grid-template-columns: 1fr;
   grid-gap: 10px;
+}
+
+main section.newpost input {
+  height: 40px;
+  font-size: 20px;
 }
 
 main section.newpost div.about {
@@ -103,8 +108,8 @@ main section.newpost div.login, div.logout {
 }
 
 main section.newpost div.login-component div input {
-  font-size: 18px;
-  height: 40px;
+  font-size: 20px;
+  height: 45px;
 }
 
 main section.newpost div.login-component div span {

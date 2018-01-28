@@ -113,10 +113,17 @@ function eventController(result) {
   var voteDown = document.querySelectorAll('.down');
   var removeItem = document.querySelectorAll('.remove');
   var selectOrder = document.querySelector('select');
+  var searchInput = document.querySelector('section.newpost input');
+  var searchResult;
   
   selectOrder.addEventListener('change', function() {
     orderBy(this.options[this.selectedIndex].value, result);
-  })
+  });
+  
+  searchInput.addEventListener('input', function() {
+    searchResult = result.posts.filter(post => post.title.toLowerCase().includes(this.value.toLowerCase()));
+    pageRender({'status': 'OK', 'posts': searchResult});
+  });
   
   voteUp.forEach(function(element, i) {
     element.addEventListener('click', function() {

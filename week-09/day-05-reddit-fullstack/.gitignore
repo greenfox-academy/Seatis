@@ -1,0 +1,9 @@
+__pycache__/
+.vscode/
+assets/
+node_modules/
+old/
+class_test.js
+callback-test.js
+MOCK_DATA.js
+ajax-test.js

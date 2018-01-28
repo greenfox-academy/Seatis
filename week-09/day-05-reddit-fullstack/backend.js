@@ -63,8 +63,12 @@ app.get('/posts', function(request, response) {
 });
 
 app.post('/posts', function (request, response) {
-  console.log(request.headers['username']);
-  var queryString = `INSERT INTO posts (title, url, timestamp) VALUES ('${request.body.title}', '${request.body.url}', ${Date.now()})`;
+  let queryString;
+  if (request.headers['username']) {
+    queryString = `INSERT INTO posts (title, url, timestamp, owner) VALUES ('${request.body.title}', '${request.body.url}', ${Date.now()}, '${request.headers['username']}')`
+  } else {
+    queryString = `INSERT INTO posts (title, url, timestamp) VALUES ('${request.body.title}', '${request.body.url}', ${Date.now()})`;
+  }
   var queryCheck = `SELECT * from posts WHERE title='${request.body.title}'`;
   connection.query(queryString, function(error, result) {
     if (error) {

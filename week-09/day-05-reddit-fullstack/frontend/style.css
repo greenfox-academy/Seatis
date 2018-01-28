@@ -289,3 +289,20 @@ select {
 p.order {
   font-size: 18px;
 }
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 36px;
+}
+
+div.noresult {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+img.sad {
+  width: 270px;
+  margin-top: 15px;
+}

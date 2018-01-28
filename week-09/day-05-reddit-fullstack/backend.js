@@ -117,6 +117,24 @@ app.put('/posts/:postID/downvote', function (request, response) {
   });
 });
 
+app.put('/posts/:postID', function (request, response) {
+  var queryString = `UPDATE posts SET title = '${request.body.title}', url = '${request.body.url}' WHERE id = ${request.params.postID}`;
+  var queryCheck = `SELECT * from posts WHERE id='${request.params.postID}'`;
+  connection.query(queryString, function(error, result) {
+    if (error) {
+      response.status(500).send({'status': 'error', 'error': `Database ${error.toString()}`});
+      return;
+    }
+  });
+  connection.query(queryCheck, function(error, result) {
+    if (error) {
+      response.status(500).send({'status': 'error', 'error': `Database ${error.toString()}`});
+      return;
+    }
+    response.send(resultMaker(result));
+  });
+});
+
 app.delete('/posts/:postID', function (request, response) {
   var queryString = `DELETE FROM posts WHERE id = ${request.params.postID}`;
   var queryCheck = `SELECT * from posts WHERE id ='${request.params.postID}'`;

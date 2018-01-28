@@ -68,21 +68,49 @@ function pageRender(result) {
 
 function orderBy(condition, result) {
   let sortedPosts;
-  if (condition === 'id') {
-    sortedPosts = result.posts.sort(function(a, b){
-      return a.id - b.id;
-    });
-  } else if (condition === 'title') {
-    sortedPosts = result.posts.sort(function(a, b){
-      if(a.title < b.title) return -1;
-      if(a.title > b.title) return 1;
-      return 0;
-    });
-  } else if (condition === 'score') {
-    sortedPosts = result.posts.sort(function(a, b){
-      return a.score - b.score;
-    });
+
+  switch(condition) {
+    case 'idA':
+      sortedPosts = result.posts.sort(function(a, b){
+        return a.id - b.id;
+      });
+      break;
+    case 'idD':
+      sortedPosts = result.posts.sort(function(a, b){
+        return b.id - a.id;
+      });
+      break;
+    // case 'idA':
+    //     code block
+    //     break;
+    // case 'idA':
+    //     code block
+    //     break;
+    // case 'idA':
+    //     code block
+    //     break;
+    // case 'idA':
+    //     code block
+    //     break;
+    // default:
+    //     code block
   }
+
+  // if (condition === 'idA') {
+  //   sortedPosts = result.posts.sort(function(a, b){
+  //     return a.id - b.id;
+  //   });
+  // } else if (condition === 'title') {
+  //   sortedPosts = result.posts.sort(function(a, b){
+  //     if(a.title < b.title) return -1;
+  //     if(a.title > b.title) return 1;
+  //     return 0;
+  //   });
+  // } else if (condition === 'score') {
+  //   sortedPosts = result.posts.sort(function(a, b){
+  //     return a.score - b.score;
+  //   });
+  // }
   pageRender({'status': 'OK', 'posts': sortedPosts})
 }
 

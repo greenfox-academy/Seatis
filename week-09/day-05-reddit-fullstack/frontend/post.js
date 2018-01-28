@@ -22,7 +22,7 @@ function core() {
 
 function afterEvent(result) {
   if (result.status === 'OK') {
-    document.querySelector('p.response').textContent = 'The post has been sent!';
+    document.querySelector('p.response').innerHTML = `The post has been sent! <a href="http://localhost:5000">Click to back</a>`;
     myTitle.value = '';
     myURL.value = '';
   } else {

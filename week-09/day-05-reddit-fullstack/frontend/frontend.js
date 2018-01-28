@@ -108,7 +108,7 @@ function loginController() {
 
 function updateScore(result, index) {
   var score = document.querySelectorAll('.score');
-  score[index].textContent = result.score;
+  score[index].textContent = result.post.score;
 }
 
 function updateLogin() {

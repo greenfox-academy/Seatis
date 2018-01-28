@@ -68,7 +68,30 @@ app.post('/posts', function (request, response) {
   });
 });
 
-
+app.put('/posts/:postID/upvote', function (request, response) {
+  var queryString = 'UPDATE posts SET score = score + 1 WHERE id=' + request.params.postID;
+  var queryCheck = `SELECT * from posts WHERE id='${request.params.postID}'`;
+  connection.query(queryString, function(error, result) {
+    if (error) {
+      response.status(500).send({'status': 'error', 'error': `Database ${error.toString()}`});
+      return;
+    }
+  });
+  connection.query(queryCheck, function(error, result) {
+    if (error) {
+      response.status(500).send({'status': 'error', 'error': `Database ${error.toString()}`});
+      return;
+    }
+    response.send({'status': 'OK', 'post': {
+      "id": result[0].id,      
+      "title": result[0].title,
+      "url": result[0].url,
+      "timestamp": result[0].timestamp,
+      "score": result[0].score, 
+      "owner": result[0].owner
+    }});
+  });
+});
 
 // connection.end();
 app.listen(5000, () => console.log('Running'));

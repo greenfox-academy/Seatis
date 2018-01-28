@@ -25,10 +25,24 @@ connection.connect(function(err) {
   console.log("Connection established.");
 });
 
-app.get('/', function(req, res) {
+app.get('/', function(request, response) {
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/posts', function(request, response) {
+  let data = [];
+  connection.query('SELECT * from posts', function(error, result) {
+    if (error) {
+      console.log(error.toString());
+      response.status(500).send('Database error');
+      return;
+    }
+    result.forEach(function(row){
+      data.push(row)
+    });
+    response.send({'posts': data});
+  });
+});
 
-connection.end();
+// connection.end();
 app.listen(5000, () => console.log('Running'));

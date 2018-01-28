@@ -1,6 +1,7 @@
 "use strict"
 // const baseURL = 'http://secure-reddit.herokuapp.com/simple/posts';
-const baseURL = 'https://time-radish.glitch.me/posts';
+// const baseURL = 'https://time-radish.glitch.me/posts';
+const baseURL = 'http://localhost:5000/posts';
 
 function authService() {
   this.getLocalStorage = function() {

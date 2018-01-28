@@ -1,5 +1,6 @@
 "use strict"
 
+const baseURL = 'http://localhost:5000/posts';
 var myURL = document.querySelector('input');
 var myTitle = document.querySelector('textarea');
 
@@ -11,7 +12,7 @@ function core() {
       "url": myURL.value
     });
     if (myURL.value) {
-      ajax('POST', 'https://time-radish.glitch.me/posts', body, afterEvent);
+      ajax('POST', baseURL, body, afterEvent);
     }
     else {
       alert('Please enter the url!');
@@ -19,10 +20,14 @@ function core() {
   });
 }
 
-function afterEvent() {
-  document.querySelector('p.response').textContent = 'The post has been sent!';
-  myTitle.value = '';
-  myURL.value = '';
+function afterEvent(result) {
+  if (result.status === 'OK') {
+    document.querySelector('p.response').textContent = 'The post has been sent!';
+    myTitle.value = '';
+    myURL.value = '';
+  } else {
+    document.querySelector('p.response').textContent = result.error;
+  }
 }
 
 core();

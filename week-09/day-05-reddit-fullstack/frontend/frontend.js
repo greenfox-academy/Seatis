@@ -35,28 +35,32 @@ function elapsedTimeCalc(timestamp) {
 
 function pageRender(result) {
   let mainSection = document.querySelector('section.main-container');
-  mainSection.innerHTML = '';
-  result.posts.forEach(function(element) {
-    let elapsedTime = elapsedTimeCalc(element.timestamp);
-    if (element.owner !== null) {
-      var currentUser = element.owner;
-    } else {
-      var currentUser = "Anonymus"
-    }
-    const markup = `
-    <div class="id">${element.id}</div>
-    <div class="arrows">
-      <div><img class="up" src="../assets/upvote.png" alt=""></div>
-      <div class="score">${element.score}</div>
-      <div><img class="down" src="../assets/downvote.png" alt=""></div>
-    </div>
-    <div class="title">
-      <div class="head"><a href='${element.url}'>${element.title}</a></div>
-      <div class="description">submitted ${elapsedTime} ago by ${currentUser}</div>
-      <div><span class="modify">modify</span><span class="remove">remove</span></div>
-    </div>`
-    mainSection.innerHTML += markup;
-  });
+  if (result.status === 'OK') {
+    mainSection.innerHTML = '';
+    result.posts.forEach(function(element) {
+      let elapsedTime = elapsedTimeCalc(element.timestamp);
+      if (element.owner !== null) {
+        var currentUser = element.owner;
+      } else {
+        var currentUser = "Anonymus"
+      }
+      const markup = `
+      <div class="id">${element.id}</div>
+      <div class="arrows">
+        <div><img class="up" src="../assets/upvote.png" alt=""></div>
+        <div class="score">${element.score}</div>
+        <div><img class="down" src="../assets/downvote.png" alt=""></div>
+      </div>
+      <div class="title">
+        <div class="head"><a href='${element.url}'>${element.title}</a></div>
+        <div class="description">submitted ${elapsedTime} ago by ${currentUser}</div>
+        <div><span class="modify">modify</span><span class="remove">remove</span></div>
+      </div>`
+      mainSection.innerHTML += markup;
+    });
+  } else {
+    mainSection.innerHTML = `<div>${result.error}</div>`;
+  }
 }
 
 function eventController() {

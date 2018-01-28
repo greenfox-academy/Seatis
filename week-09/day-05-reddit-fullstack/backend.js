@@ -10,6 +10,14 @@ app.use(express.static('./frontend'));
 app.use('/assets', express.static('./assets'));
 app.use(cors());
 
+// const corsOptions = {
+//   origin: 'http://localhost:5000',
+//   allowedHeaders: ['Accept-Version', 'Authorization', 'Credentials', 'Content-Type', 'Username'],
+//   exposedHeaders: ['X-Request-Id', 'Username'],
+// }
+
+// app.all('*', cors(corsOptions))
+
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -55,6 +63,7 @@ app.get('/posts', function(request, response) {
 });
 
 app.post('/posts', function (request, response) {
+  console.log(request.headers['username']);
   var queryString = `INSERT INTO posts (title, url, timestamp) VALUES ('${request.body.title}', '${request.body.url}', ${Date.now()})`;
   var queryCheck = `SELECT * from posts WHERE title='${request.body.title}'`;
   connection.query(queryString, function(error, result) {

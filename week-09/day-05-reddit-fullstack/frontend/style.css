@@ -14,6 +14,7 @@ section.header {
   width: 100%;
   height: 250px;
   background: url("../assets/spacebanner-3.png") no-repeat;
+  margin-bottom: 10px;
 }
 
 section.main-container {
@@ -211,7 +212,7 @@ section.main-container div.title div .remove{
 
 section.post-container {
   width: 530px;
-  height: 175px;
+  height: 190px;
   background: #fff;
   margin-left: 40px;
   margin-top: 40px;

@@ -10,7 +10,7 @@ function ajax (method, url, data, callback, index) {
   xhr.setRequestHeader("Accept", "application/json");
   xhr.setRequestHeader("Content-Type", "application/json");
   if (method === 'POST' && localStorage.getItem('user')) {
-    xhr.setRequestHeader("Username", localStorage.getItem('user'));
+    xhr.setRequestHeader("username", localStorage.getItem('user'));
   }
   xhr.send(data);
 }

@@ -80,37 +80,47 @@ function orderBy(condition, result) {
         return b.id - a.id;
       });
       break;
-    // case 'idA':
-    //     code block
-    //     break;
-    // case 'idA':
-    //     code block
-    //     break;
-    // case 'idA':
-    //     code block
-    //     break;
-    // case 'idA':
-    //     code block
-    //     break;
-    // default:
-    //     code block
+    case 'titleA':
+      sortedPosts = result.posts.sort(function(a, b){
+        if(a.title < b.title) return -1;
+        if(a.title > b.title) return 1;
+        return 0;
+      });
+      break;
+    case 'titleD':
+      sortedPosts = result.posts.sort(function(a, b){
+        if(a.title < b.title) return 1;
+        if(a.title > b.title) return -1;
+        return 0;
+      });
+      break;
+    case 'scoreA':
+      sortedPosts = result.posts.sort(function(a, b){
+        return a.score - b.score;
+      });
+      break;
+    case 'scoreD':
+      sortedPosts = result.posts.sort(function(a, b){
+        return b.score - a.score;
+      });
+      break;
   }
 
-  // if (condition === 'idA') {
-  //   sortedPosts = result.posts.sort(function(a, b){
-  //     return a.id - b.id;
-  //   });
-  // } else if (condition === 'title') {
-  //   sortedPosts = result.posts.sort(function(a, b){
-  //     if(a.title < b.title) return -1;
-  //     if(a.title > b.title) return 1;
-  //     return 0;
-  //   });
-  // } else if (condition === 'score') {
-  //   sortedPosts = result.posts.sort(function(a, b){
-  //     return a.score - b.score;
-  //   });
-  // }
+  if (condition === 'idA') {
+    sortedPosts = result.posts.sort(function(a, b){
+      return a.id - b.id;
+    });
+  } else if (condition === 'title') {
+    sortedPosts = result.posts.sort(function(a, b){
+      if(a.title < b.title) return -1;
+      if(a.title > b.title) return 1;
+      return 0;
+    });
+  } else if (condition === 'score') {
+    sortedPosts = result.posts.sort(function(a, b){
+      return a.score - b.score;
+    });
+  }
   pageRender({'status': 'OK', 'posts': sortedPosts})
 }
 
@@ -122,7 +132,6 @@ function eventController(result) {
   var selectOrder = document.querySelector('select');
   
   selectOrder.addEventListener('change', function() {
-    console.log(this.options[this.selectedIndex].value);
     orderBy(this.options[this.selectedIndex].value, result);
   })
   

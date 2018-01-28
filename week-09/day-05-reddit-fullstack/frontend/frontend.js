@@ -48,6 +48,7 @@ function pageRender(result) {
         var currentUser = "Anonymus"
       }
       const markup = `
+      <div class="row">
       <div class="id">${element.id}</div>
       <div class="arrows">
         <div><img class="up" src="../assets/upvote.png" alt=""></div>
@@ -58,6 +59,7 @@ function pageRender(result) {
         <div class="head"><a href='${element.url}'>${element.title}</a></div>
         <div class="description">submitted ${elapsedTime} ago by ${currentUser}</div>
         <div><span class="modify"><a href="modify.html?id=${element.id}">modify</a></span><span class="remove">remove</span></div>
+      </div>
       </div>`
       mainSection.innerHTML += markup;
     });

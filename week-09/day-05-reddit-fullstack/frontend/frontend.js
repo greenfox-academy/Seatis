@@ -68,7 +68,6 @@ function eventController() {
   var voteUp = document.querySelectorAll('.up');
   var voteDown = document.querySelectorAll('.down');
   var removeItem = document.querySelectorAll('.remove');
-  var modifyItem = document.querySelectorAll('.modify');
   voteUp.forEach(function(element, i) {
     element.addEventListener('click', function() {
       let currentURL = baseURL + '/' + currentID[i].textContent + '/upvote';
@@ -88,15 +87,6 @@ function eventController() {
       ajax('DELETE', currentURL, null, reLoad);
     });
   });
-  modifyItem.forEach(function(element, i) {
-    element.addEventListener('click', function() {
-      modifyPost(currentID[i].textContent);
-    });
-  });
-}
-
-function modifyPost(i) {
-
 }
 
 function loginController() {

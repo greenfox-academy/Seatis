@@ -30,5 +30,5 @@ app.get('/', function(req, res) {
 });
 
 
-conn.end();
+connection.end();
 app.listen(5000, () => console.log('Running'));

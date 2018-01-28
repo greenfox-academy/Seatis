@@ -21,10 +21,13 @@ function elapsedTimeCalc(timestamp) {
   let currentDate = new Date();
   let postDate = new Date(timestamp);
   let timeInSec = Math.floor((currentDate - postDate) / 1000);
-  let hours   = Math.floor(timeInSec / 3600);
+  let days = Math.floor(timeInSec / (3600 * 24));
+  let hours   = Math.floor((timeInSec - (days * 24)) / 3600);
   let minutes = Math.floor((timeInSec - (hours * 3600)) / 60);
   let seconds = timeInSec - (hours * 3600) - (minutes * 60);
-  if (hours > 0) {
+  if (days > 0) {
+    return days + ' days';
+  } else if (hours > 0) {
     return hours + ' hours';
   } else if (minutes > 0) {
     return minutes + ' minutes';

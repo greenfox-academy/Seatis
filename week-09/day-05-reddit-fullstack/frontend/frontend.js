@@ -66,11 +66,38 @@ function pageRender(result) {
   }
 }
 
-function eventController() {
+function orderBy(condition, result) {
+  let sortedPosts;
+  if (condition === 'id') {
+    sortedPosts = result.posts.sort(function(a, b){
+      return a.id - b.id;
+    });
+  } else if (condition === 'title') {
+    sortedPosts = result.posts.sort(function(a, b){
+      if(a.title < b.title) return -1;
+      if(a.title > b.title) return 1;
+      return 0;
+    });
+  } else if (condition === 'score') {
+    sortedPosts = result.posts.sort(function(a, b){
+      return a.score - b.score;
+    });
+  }
+  pageRender({'status': 'OK', 'posts': sortedPosts})
+}
+
+function eventController(result) {
   var currentID = document.querySelectorAll('.id');
   var voteUp = document.querySelectorAll('.up');
   var voteDown = document.querySelectorAll('.down');
   var removeItem = document.querySelectorAll('.remove');
+  var selectOrder = document.querySelector('select');
+  
+  selectOrder.addEventListener('change', function() {
+    console.log(this.options[this.selectedIndex].value);
+    orderBy(this.options[this.selectedIndex].value, result);
+  })
+  
   voteUp.forEach(function(element, i) {
     element.addEventListener('click', function() {
       let currentURL = baseURL + '/' + currentID[i].textContent + '/upvote';
@@ -132,7 +159,7 @@ function core(result) {
   pageRender(result);
   updateLogin();
   loginController();
-  eventController();
+  eventController(result);
 }
 
 function reLoad() {

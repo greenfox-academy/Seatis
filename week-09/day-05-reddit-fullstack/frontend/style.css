@@ -35,7 +35,7 @@ main {
 
 main section.newpost {
   display: grid;
-  grid-template-rows: 50px 270px auto;
+  grid-template-rows: 20px 50px 50px 270px auto;
   grid-template-columns: 1fr;
   grid-gap: 10px;
 }
@@ -271,4 +271,12 @@ span.modify a {
 
 a:visited, a:active {
   color: blue;
+}
+
+select {
+  font-size: 20px;
+}
+
+p.order {
+  font-size: 18px;
 }

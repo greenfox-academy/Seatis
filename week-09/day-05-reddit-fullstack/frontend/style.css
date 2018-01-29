@@ -198,10 +198,11 @@ section.main-container div.title div.description{
   color: grey;
 }
 
-section.main-container div.title div .remove, .modify{
+section.main-container div.title div .remove, .modifyOK, .modifyNO {
   font-size: 16px;
   color: rgb(88, 88, 88);
   margin-right: 10px;
+  cursor: pointer;
 }
 
 section.main-container div.title div .remove{
@@ -274,7 +275,7 @@ a {
   color: blue;
 }
 
-span.modify a {
+span.modifyOK a, span.modifyNO a {
   color: rgb(88, 88, 88);
 }
 

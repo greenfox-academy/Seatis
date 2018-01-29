@@ -48,19 +48,25 @@ function pageRender(result) {
         } else {
           var currentUser = "Anonymus"
         }
+        if (myService.getLocalStorage() === currentUser) {
+          var modifyOK = `<span class="modifyOK"><a href="modify.html?id=${element.id}">modify</a></span>`;
+        } else {
+          var modifyOK = `<span class="modifyNO">modify</span>`;
+
+        }
         const markup = `
         <div class="row">
-        <div class="id">${element.id}</div>
-        <div class="arrows">
-          <div><img class="up" src="../assets/upvote.png" alt=""></div>
-          <div class="score">${element.score}</div>
-          <div><img class="down" src="../assets/downvote.png" alt=""></div>
-        </div>
-        <div class="title">
-          <div class="head"><a href='${element.url}'>${element.title}</a></div>
-          <div class="description">submitted ${elapsedTime} ago by ${currentUser}</div>
-          <div><span class="modify"><a href="modify.html?id=${element.id}">modify</a></span><span class="remove">remove</span></div>
-        </div>
+          <div class="id">${element.id}</div>
+          <div class="arrows">
+            <div><img class="up" src="../assets/upvote.png" alt=""></div>
+            <div class="score">${element.score}</div>
+            <div><img class="down" src="../assets/downvote.png" alt=""></div>
+          </div>
+          <div class="title">
+            <div class="head"><a href='${element.url}'>${element.title}</a></div>
+            <div class="description">submitted ${elapsedTime} ago by ${currentUser}</div>
+            <div>${modifyOK}<span class="remove">remove</span></div>
+          </div>
         </div>`
         mainSection.innerHTML += markup;
       });
@@ -122,6 +128,7 @@ function eventController(result) {
   var voteDown = document.querySelectorAll('.down');
   var removeItem = document.querySelectorAll('.remove');
   var selectOrder = document.querySelector('select');
+  var modifyNO = document.querySelectorAll('.modifyNO');
   var searchInput = document.querySelector('section.newpost input');
   var searchResult;
   
@@ -132,6 +139,12 @@ function eventController(result) {
   searchInput.addEventListener('input', function() {
     searchResult = result.posts.filter(post => post.title.toLowerCase().includes(this.value.toLowerCase()));
     pageRender({'status': 'OK', 'posts': searchResult});
+  });
+
+  modifyNO.forEach(function(element) {
+    element.addEventListener('click', function() {
+      alert('Access denied!');
+    });
   });
   
   voteUp.forEach(function(element, i) {
@@ -163,11 +176,13 @@ function loginController() {
     login.addEventListener('click', function() {
       myService.setLocalStorage(inputField.value);
       updateLogin();
+      reLoad();
     });
   } else if (logout) {
     logout.addEventListener('click', function() {
       myService.clearLocalStorage();
       updateLogin();
+      reLoad();
     });
   }
 }

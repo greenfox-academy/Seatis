@@ -96,15 +96,15 @@ function orderBy(condition, result) {
       break;
     case 'titleA':
       sortedPosts = result.posts.sort(function(a, b){
-        if(a.title < b.title) return -1;
-        if(a.title > b.title) return 1;
+        if(a.title.toLowerCase() < b.title.toLowerCase()) return -1;
+        if(a.title.toLowerCase() > b.title.toLowerCase()) return 1;
         return 0;
       });
       break;
     case 'titleD':
       sortedPosts = result.posts.sort(function(a, b){
-        if(a.title < b.title) return 1;
-        if(a.title > b.title) return -1;
+        if(a.title.toLowerCase() < b.title.toLowerCase()) return 1;
+        if(a.title.toLowerCase() > b.title.toLowerCase()) return -1;
         return 0;
       });
       break;
@@ -120,9 +120,10 @@ function orderBy(condition, result) {
       break;
   }
   pageRender({'status': 'OK', 'posts': sortedPosts})
+  eventController(sortedPosts, true);
 }
 
-function eventController(result) {
+function eventController(result, access) {
   var currentID = document.querySelectorAll('.id');
   var voteUp = document.querySelectorAll('.up');
   var voteDown = document.querySelectorAll('.down');
@@ -132,9 +133,11 @@ function eventController(result) {
   var searchInput = document.querySelector('section.newpost input');
   var searchResult;
   
-  selectOrder.addEventListener('change', function() {
-    orderBy(this.options[this.selectedIndex].value, result);
-  });
+  if (!access) {
+    selectOrder.addEventListener('change', function() {
+      orderBy(this.options[this.selectedIndex].value, result);
+    });
+  }
   
   searchInput.addEventListener('input', function() {
     searchResult = result.posts.filter(post => post.title.toLowerCase().includes(this.value.toLowerCase()));
@@ -190,6 +193,7 @@ function loginController() {
 function updateScore(result, index) {
   var score = document.querySelectorAll('.score');
   score[index].textContent = result.post.score;
+  // reLoad();
 }
 
 function updateLogin() {

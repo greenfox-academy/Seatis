@@ -1,7 +1,7 @@
 # Portfolio (own code examples):
 
 ### [Wanderer game (python)](https://github.com/greenfox-academy/Seatis/blob/master/week-05/wanderer_9.py)
-
+### [Javascript gallery-slider based on MVC](https://github.com/greenfox-academy/Seatis/tree/master/week-07/gallery-MVC)
 
 1. [Foundation](https://github.com/Seatis/final-exam-staff/blob/master/final_exam_almanach.js)
 2. [Arrays](https://github.com/Seatis/final-exam-staff/blob/master/arrays.js)

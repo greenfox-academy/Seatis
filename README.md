@@ -1,7 +1,13 @@
 # Portfolio (own code examples):
 
 ### [Wanderer game (python)](https://github.com/greenfox-academy/Seatis/blob/master/week-05/wanderer_9.py)
-### [Javascript gallery-slider based on MVC](https://github.com/greenfox-academy/Seatis/tree/master/week-07/gallery-MVC)
+### [JS gallery-slider based on MVC](https://github.com/greenfox-academy/Seatis/tree/master/week-07/gallery-MVC)
+### [Classic elevator-controller based on MVC](https://github.com/greenfox-academy/Seatis/tree/master/week-08/day-01/elevator-refactored-2)
+### [Animal farm](https://github.com/greenfox-academy/Seatis/blob/master/week-08/day-01/animal-farm-refactored.js)
+### Playing with WEB-APIs
+ - [Google API (positioning)](https://github.com/greenfox-academy/Seatis/tree/master/week-08/day-03/Get_Position_refactored)
+ - [Giphy API (get gifs)](https://github.com/greenfox-academy/Seatis/tree/master/week-08/day-03/Giphy_API_refactored)
+ - [NYT API (finding Moon-landing)](https://github.com/greenfox-academy/Seatis/tree/master/week-08/day-03/NYT_API_refactored)
 
 1. [Foundation](https://github.com/Seatis/final-exam-staff/blob/master/final_exam_almanach.js)
 2. [Arrays](https://github.com/Seatis/final-exam-staff/blob/master/arrays.js)

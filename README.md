@@ -1,4 +1,8 @@
-# Final exam own code examples:
+# Portfolio (own code examples):
+
+### [Wanderer game (python)](https://github.com/greenfox-academy/Seatis/blob/master/week-05/wanderer_9.py)
+
+
 1. [Foundation](https://github.com/Seatis/final-exam-staff/blob/master/final_exam_almanach.js)
 2. [Arrays](https://github.com/Seatis/final-exam-staff/blob/master/arrays.js)
 3. [Objects](https://github.com/Seatis/final-exam-staff/blob/master/objects.js)

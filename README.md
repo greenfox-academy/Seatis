@@ -16,7 +16,7 @@
 ### [Orientation exam (JS)](https://github.com/Seatis/pallida-orientation-exam)
 ### [Orientation exam test (practice)](https://github.com/Seatis/pallida-jsexam-test)
 ### [Marvin frontend (Angular)](https://github.com/greenfox-academy/huli-marvin-frontend/tree/dev)
-# Final exam code examples:
+### Final exam code examples:
 1. [Foundation](https://github.com/Seatis/final-exam-staff/blob/master/final_exam_almanach.js)
 2. [Arrays](https://github.com/Seatis/final-exam-staff/blob/master/arrays.js)
 3. [Objects](https://github.com/Seatis/final-exam-staff/blob/master/objects.js)
